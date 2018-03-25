@@ -1,0 +1,21 @@
+#testimonials ul{ margin:0; padding:0; }
+#testimonials ul li, #testimonials ul li a{ list-style:none; background:transparent; border:none !important}
+.tm_thumb{ width:100%; display:inline-block;}
+#testimonials ul li img{ width:120px; height:auto; float:left; margin:0 25px 25px 0; -webkit-border-radius:100%; -moz-border-radius:100%; border-radius:100%; }
+#testimonials ul li .tm_description{width:100%; padding:0; margin:0; display:inline-block; text-align:center;}
+#testimonials ul li .tm_description p{line-height:24px; margin-bottom:0;}
+#testimonials ul li h5{ font-weight:700; margin:40px 0 0px 0; line-height:28px; color:#ffffff; text-transform:uppercase;}
+#testimonials ul li h6{ color:#4fa731; font-weight:bold; text-transform:uppercase;}
+#testimonials ul li span a{ color:#3c3b3b;}
+#testimonials ul li span a:hover{opacity:0.6;}
+#testimonials ul li span cite{ text-transform:uppercase;}
+.quotes{ width:100%; margin: 0 auto;}
+.quovolve-box{ position:relative;}
+.quovolve-nav span a{ width:30px; height:61px; display:inline-block; text-indent:-9999px; position:absolute; top:2%;}
+.quovolve-nav span.nav-prev{ background:url(../images/arrow_prev.png) no-repeat left top; left:0; display:none;}
+.quovolve-nav span.nav-next{ background:url(../images/arrow_next.png) no-repeat right top; right:0; display:none;}
+
+ol.nav-numbers{ text-align:center; margin-top:40px}
+ol.nav-numbers li{ list-style:none; display:inline-block; margin-right:10px;}
+ol.nav-numbers li a{ background-color:#464d51; width:11px; height:11px; border-radius:50%; display:inline-block; font-size:0px;}
+ol.nav-numbers li.active a{ background-color:#fff; }

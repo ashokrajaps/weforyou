@@ -1,0 +1,410 @@
+.slider-main{position:relative;}
+.nivoSlider{position:relative;	width:100%;	height:auto; overflow: hidden;}
+.nivoSlider img{position:absolute;	top:0px; left:0px;max-width: none;}
+.nivo-main-image{display: block !important;position: relative !important; width: 100% !important;} .nivoSlider a.nivo-imageLink {position:absolute;top:0px;left:0px;width:100%;height:100%;border:0;padding:0;margin:0;z-index:6;display:none;	background:white; 	filter:alpha(opacity=0); opacity:0;} .nivo-slice { display:block; position:absolute; z-index:5; height:100%; top:0;}
+.nivo-box {display:block; position:absolute; z-index:5;	overflow:hidden;}
+.nivo-box img { display:block; } .nivo-html-caption{display:none;} .nivo-directionNav a{position:absolute; bottom:0%; z-index:9; cursor:pointer;}
+a.nivo-prevNav{left:0%; top:50%; background-position:-4px 8px !important; }
+a.nivo-nextNav{right:0%; top:50%; background-position:-44px 8px !important;} .nivo-controlNav{text-align:center; padding:0; position:absolute; text-align:center; width:100%; z-index:6; bottom:30px;}
+.nivo-controlNav a{cursor:pointer; z-index:99; }
+.nivo-controlNav a{border: 0 none; display:inline-block; height:11px; width:11px; margin:0 4px; text-indent:-9999px; border-radius:100%;-moz-border-radius:100%;-webkit-border-radius:100%;-o-border-radius:100%;}
+.nivo-controlNav a.active{font-weight:bold;}
+.nivo-directionNav{background:rgba(0, 0, 0, 0.6); display:table; text-align:center;}
+.nivo-directionNav a {border: 0 none; display: block; height:53px; opacity:0; text-indent: -9999px; transition: all 200ms ease-in-out 0s; width:38px; background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/slide-nav.png) no-repeat; }
+.slider-main:hover .nivo-directionNav a{opacity:1;} .nivo-caption {position:absolute; top:40%; left:7%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; color:#fff; z-index:8;
+padding:0; display:none; width:42%; text-align:left;}
+.slide_info h2{ display:inline-block;  font:32px/60px 'Roboto', sans-serif; color:#ffffff; margin:0; padding:0 0 15px 0; font-weight:300;}
+.slide_info h2 strong{ font-weight:800; display:block;}
+.slide_info p{font:400 18px/20px 'PT Sans', sans-serif; margin:0; padding:0 0 30px 0; font-weight:400; display:table;}
+.slide_info a.sldbutton{ color:#ffffff; padding:10px 20px; margin-top:40px; display:table; font-weight:bold; -webkit-border-radius:3px; -moz-border-radius:3px;border-radius: 3px;}
+.slider-main{min-height:500px; background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/loading.gif) no-repeat center center #ffffff;}
+
+/* *******************************/
+div.pp_default .pp_top,div.pp_default .pp_top .pp_middle,div.pp_default .pp_top .pp_left,div.pp_default .pp_top .pp_right,div.pp_default .pp_bottom,div.pp_default .pp_bottom .pp_left,div.pp_default .pp_bottom .pp_middle,div.pp_default .pp_bottom .pp_right{height:13px}
+div.pp_default .pp_top .pp_left{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/default/sprite.png) -78px -93px no-repeat}
+div.pp_default .pp_top .pp_middle{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/default/sprite_x.png) top left repeat-x}
+div.pp_default .pp_top .pp_right{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/default/sprite.png) -112px -93px no-repeat}
+div.pp_default .pp_content .ppt{color:#f8f8f8}
+div.pp_default .pp_content_container .pp_left{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/default/sprite_y.png) -7px 0 repeat-y;padding-left:13px}
+div.pp_default .pp_content_container .pp_right{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/default/sprite_y.png) top right repeat-y;padding-right:13px}
+div.pp_default .pp_next:hover{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/default/sprite_next.png) center right no-repeat;cursor:pointer}
+div.pp_default .pp_previous:hover{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/default/sprite_prev.png) center left no-repeat;cursor:pointer}
+div.pp_default .pp_expand{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/default/sprite.png) 0 -29px no-repeat;cursor:pointer;width:28px;height:28px}
+div.pp_default .pp_expand:hover{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/default/sprite.png) 0 -56px no-repeat;cursor:pointer}
+div.pp_default .pp_contract{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/default/sprite.png) 0 -84px no-repeat;cursor:pointer;width:28px;height:28px}
+div.pp_default .pp_contract:hover{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/default/sprite.png) 0 -113px no-repeat;cursor:pointer}
+div.pp_default .pp_close{width:30px;height:30px;background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/default/sprite.png) 2px 1px no-repeat;cursor:pointer}
+div.pp_default .pp_gallery ul li a{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/default/default_thumb.png) center center #f8f8f8;border:1px solid #aaa}
+div.pp_default .pp_social{margin-top:7px}
+div.pp_default .pp_gallery a.pp_arrow_previous,div.pp_default .pp_gallery a.pp_arrow_next{position:static;left:auto}
+div.pp_default .pp_nav .pp_play,div.pp_default .pp_nav .pp_pause{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/default/sprite.png) -51px 1px no-repeat;height:30px;width:30px}
+div.pp_default .pp_nav .pp_pause{background-position:-51px -29px}
+div.pp_default a.pp_arrow_previous,div.pp_default a.pp_arrow_next{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/default/sprite.png) -31px -3px no-repeat;height:20px;width:20px;margin:4px 0 0}
+div.pp_default a.pp_arrow_next{left:52px;background-position:-82px -3px}
+div.pp_default .pp_content_container .pp_details{margin-top:5px}
+div.pp_default .pp_nav{clear:none;height:30px;width:110px;position:relative}
+div.pp_default .pp_nav .currentTextHolder{font-family:Georgia;font-style:italic;color:#999;font-size:11px;left:75px;line-height:25px;position:absolute;top:2px;margin:0;padding:0 0 0 10px}
+div.pp_default .pp_close:hover,div.pp_default .pp_nav .pp_play:hover,div.pp_default .pp_nav .pp_pause:hover,div.pp_default .pp_arrow_next:hover,div.pp_default .pp_arrow_previous:hover{opacity:0.7}
+div.pp_default .pp_description{font-size:11px;font-weight:700;line-height:14px;margin:5px 50px 5px 0}
+div.pp_default .pp_bottom .pp_left{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/default/sprite.png) -78px -127px no-repeat}
+div.pp_default .pp_bottom .pp_middle{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/default/sprite_x.png) bottom left repeat-x}
+div.pp_default .pp_bottom .pp_right{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/default/sprite.png) -112px -127px no-repeat}
+div.pp_default .pp_loaderIcon{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/default/loader.gif) center center no-repeat}
+div.light_rounded .pp_top .pp_left{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_rounded/sprite.png) -88px -53px no-repeat}
+div.light_rounded .pp_top .pp_right{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_rounded/sprite.png) -110px -53px no-repeat}
+div.light_rounded .pp_next:hover{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_rounded/btnNext.png) center right no-repeat;cursor:pointer}
+div.light_rounded .pp_previous:hover{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_rounded/btnPrevious.png) center left no-repeat;cursor:pointer}
+div.light_rounded .pp_expand{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_rounded/sprite.png) -31px -26px no-repeat;cursor:pointer}
+div.light_rounded .pp_expand:hover{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_rounded/sprite.png) -31px -47px no-repeat;cursor:pointer}
+div.light_rounded .pp_contract{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_rounded/sprite.png) 0 -26px no-repeat;cursor:pointer}
+div.light_rounded .pp_contract:hover{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_rounded/sprite.png) 0 -47px no-repeat;cursor:pointer}
+div.light_rounded .pp_close{width:75px;height:22px;background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_rounded/sprite.png) -1px -1px no-repeat;cursor:pointer}
+div.light_rounded .pp_nav .pp_play{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_rounded/sprite.png) -1px -100px no-repeat;height:15px;width:14px}
+div.light_rounded .pp_nav .pp_pause{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_rounded/sprite.png) -24px -100px no-repeat;height:15px;width:14px}
+div.light_rounded .pp_arrow_previous{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_rounded/sprite.png) 0 -71px no-repeat}
+div.light_rounded .pp_arrow_next{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_rounded/sprite.png) -22px -71px no-repeat}
+div.light_rounded .pp_bottom .pp_left{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_rounded/sprite.png) -88px -80px no-repeat}
+div.light_rounded .pp_bottom .pp_right{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_rounded/sprite.png) -110px -80px no-repeat}
+div.dark_rounded .pp_top .pp_left{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_rounded/sprite.png) -88px -53px no-repeat}
+div.dark_rounded .pp_top .pp_right{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_rounded/sprite.png) -110px -53px no-repeat}
+div.dark_rounded .pp_content_container .pp_left{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_rounded/contentPattern.png) top left repeat-y}
+div.dark_rounded .pp_content_container .pp_right{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_rounded/contentPattern.png) top right repeat-y}
+div.dark_rounded .pp_next:hover{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_rounded/btnNext.png) center right no-repeat;cursor:pointer}
+div.dark_rounded .pp_previous:hover{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_rounded/btnPrevious.png) center left no-repeat;cursor:pointer}
+div.dark_rounded .pp_expand{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_rounded/sprite.png) -31px -26px no-repeat;cursor:pointer}
+div.dark_rounded .pp_expand:hover{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_rounded/sprite.png) -31px -47px no-repeat;cursor:pointer}
+div.dark_rounded .pp_contract{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_rounded/sprite.png) 0 -26px no-repeat;cursor:pointer}
+div.dark_rounded .pp_contract:hover{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_rounded/sprite.png) 0 -47px no-repeat;cursor:pointer}
+div.dark_rounded .pp_close{width:75px;height:22px;background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_rounded/sprite.png) -1px -1px no-repeat;cursor:pointer}
+div.dark_rounded .pp_description{margin-right:85px;color:#fff}
+div.dark_rounded .pp_nav .pp_play{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_rounded/sprite.png) -1px -100px no-repeat;height:15px;width:14px}
+div.dark_rounded .pp_nav .pp_pause{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_rounded/sprite.png) -24px -100px no-repeat;height:15px;width:14px}
+div.dark_rounded .pp_arrow_previous{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_rounded/sprite.png) 0 -71px no-repeat}
+div.dark_rounded .pp_arrow_next{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_rounded/sprite.png) -22px -71px no-repeat}
+div.dark_rounded .pp_bottom .pp_left{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_rounded/sprite.png) -88px -80px no-repeat}
+div.dark_rounded .pp_bottom .pp_right{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_rounded/sprite.png) -110px -80px no-repeat}
+div.dark_rounded .pp_loaderIcon{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_rounded/loader.gif) center center no-repeat}
+div.dark_square .pp_left,div.dark_square .pp_middle,div.dark_square .pp_right,div.dark_square .pp_content{background:#000}
+div.dark_square .pp_description{color:#fff;margin:0 85px 0 0}
+div.dark_square .pp_loaderIcon{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_square/loader.gif) center center no-repeat}
+div.dark_square .pp_expand{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_square/sprite.png) -31px -26px no-repeat;cursor:pointer}
+div.dark_square .pp_expand:hover{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_square/sprite.png) -31px -47px no-repeat;cursor:pointer}
+div.dark_square .pp_contract{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_square/sprite.png) 0 -26px no-repeat;cursor:pointer}
+div.dark_square .pp_contract:hover{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_square/sprite.png) 0 -47px no-repeat;cursor:pointer}
+div.dark_square .pp_close{width:75px;height:22px;background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_square/sprite.png) -1px -1px no-repeat;cursor:pointer}
+div.dark_square .pp_nav{clear:none}
+div.dark_square .pp_nav .pp_play{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_square/sprite.png) -1px -100px no-repeat;height:15px;width:14px}
+div.dark_square .pp_nav .pp_pause{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_square/sprite.png) -24px -100px no-repeat;height:15px;width:14px}
+div.dark_square .pp_arrow_previous{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_square/sprite.png) 0 -71px no-repeat}
+div.dark_square .pp_arrow_next{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_square/sprite.png) -22px -71px no-repeat}
+div.dark_square .pp_next:hover{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_square/btnNext.png) center right no-repeat;cursor:pointer}
+div.dark_square .pp_previous:hover{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_square/btnPrevious.png) center left no-repeat;cursor:pointer}
+div.light_square .pp_expand{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_square/sprite.png) -31px -26px no-repeat;cursor:pointer}
+div.light_square .pp_expand:hover{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_square/sprite.png) -31px -47px no-repeat;cursor:pointer}
+div.light_square .pp_contract{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_square/sprite.png) 0 -26px no-repeat;cursor:pointer}
+div.light_square .pp_contract:hover{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_square/sprite.png) 0 -47px no-repeat;cursor:pointer}
+div.light_square .pp_close{width:75px;height:22px;background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_square/sprite.png) -1px -1px no-repeat;cursor:pointer}
+div.light_square .pp_nav .pp_play{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_square/sprite.png) -1px -100px no-repeat;height:15px;width:14px}
+div.light_square .pp_nav .pp_pause{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_square/sprite.png) -24px -100px no-repeat;height:15px;width:14px}
+div.light_square .pp_arrow_previous{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_square/sprite.png) 0 -71px no-repeat}
+div.light_square .pp_arrow_next{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_square/sprite.png) -22px -71px no-repeat}
+div.light_square .pp_next:hover{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_square/btnNext.png) center right no-repeat;cursor:pointer}
+div.light_square .pp_previous:hover{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_square/btnPrevious.png) center left no-repeat;cursor:pointer}
+div.facebook .pp_top .pp_left{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/facebook/sprite.png) -88px -53px no-repeat}
+div.facebook .pp_top .pp_middle{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/facebook/contentPatternTop.png) top left repeat-x}
+div.facebook .pp_top .pp_right{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/facebook/sprite.png) -110px -53px no-repeat}
+div.facebook .pp_content_container .pp_left{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/facebook/contentPatternLeft.png) top left repeat-y}
+div.facebook .pp_content_container .pp_right{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/facebook/contentPatternRight.png) top right repeat-y}
+div.facebook .pp_expand{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/facebook/sprite.png) -31px -26px no-repeat;cursor:pointer}
+div.facebook .pp_expand:hover{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/facebook/sprite.png) -31px -47px no-repeat;cursor:pointer}
+div.facebook .pp_contract{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/facebook/sprite.png) 0 -26px no-repeat;cursor:pointer}
+div.facebook .pp_contract:hover{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/facebook/sprite.png) 0 -47px no-repeat;cursor:pointer}
+div.facebook .pp_close{width:22px;height:22px;background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/facebook/sprite.png) -1px -1px no-repeat;cursor:pointer}
+div.facebook .pp_description{margin:0 37px 0 0}
+div.facebook .pp_loaderIcon{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/facebook/loader.gif) center center no-repeat}
+div.facebook .pp_arrow_previous{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/facebook/sprite.png) 0 -71px no-repeat;height:22px;margin-top:0;width:22px}
+div.facebook .pp_arrow_previous.disabled{background-position:0 -96px;cursor:default}
+div.facebook .pp_arrow_next{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/facebook/sprite.png) -32px -71px no-repeat;height:22px;margin-top:0;width:22px}
+div.facebook .pp_arrow_next.disabled{background-position:-32px -96px;cursor:default}
+div.facebook .pp_nav{margin-top:0}
+div.facebook .pp_nav p{font-size:15px;padding:0 3px 0 4px}
+div.facebook .pp_nav .pp_play{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/facebook/sprite.png) -1px -123px no-repeat;height:22px;width:22px}
+div.facebook .pp_nav .pp_pause{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/facebook/sprite.png) -32px -123px no-repeat;height:22px;width:22px}
+div.facebook .pp_next:hover{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/facebook/btnNext.png) center right no-repeat;cursor:pointer}
+div.facebook .pp_previous:hover{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/facebook/btnPrevious.png) center left no-repeat;cursor:pointer}
+div.facebook .pp_bottom .pp_left{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/facebook/sprite.png) -88px -80px no-repeat}
+div.facebook .pp_bottom .pp_middle{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/facebook/contentPatternBottom.png) top left repeat-x}
+div.facebook .pp_bottom .pp_right{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/facebook/sprite.png) -110px -80px no-repeat}
+div.pp_pic_holder a:focus{outline:none}
+div.pp_overlay{background:#000;display:none;left:0;position:absolute;top:0;width:100%;z-index:9500}
+div.pp_pic_holder{display:none;position:absolute;width:100px;z-index:10000}
+.pp_content{height:40px;min-width:40px}
+* html .pp_content{width:40px}
+.pp_content_container{position:relative;text-align:left;width:100%}
+.pp_content_container .pp_left{padding-left:20px}
+.pp_content_container .pp_right{padding-right:20px}
+.pp_content_container .pp_details{float:left;margin:10px 0 2px}
+.pp_description{display:none;margin:0}
+.pp_social{float:left;margin:0}
+.pp_social .facebook{float:left;margin-left:5px;width:55px;overflow:hidden}
+.pp_social .twitter{float:left}
+.pp_nav{clear:right;float:left;margin:3px 10px 0 0}
+.pp_nav p{float:left;white-space:nowrap;margin:2px 4px}
+.pp_nav .pp_play,.pp_nav .pp_pause{float:left;margin-right:4px;text-indent:-10000px}
+a.pp_arrow_previous,a.pp_arrow_next{display:block;float:left;height:15px;margin-top:3px;overflow:hidden;text-indent:-10000px;width:14px}
+.pp_hoverContainer{position:absolute;top:0;width:100%;z-index:2000}
+.pp_gallery{display:none;left:50%;margin-top:-50px;position:absolute;z-index:10000}
+.pp_gallery div{float:left;overflow:hidden;position:relative}
+.pp_gallery ul{float:left;height:35px;position:relative;white-space:nowrap;margin:0 0 0 5px;padding:0}
+.pp_gallery ul a{border:1px rgba(0,0,0,0.5) solid;display:block;float:left;height:33px;overflow:hidden}
+.pp_gallery ul a img{border:0}
+.pp_gallery li{display:block;float:left;margin:0 5px 0 0;padding:0}
+.pp_gallery li.default a{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/facebook/default_thumbnail.gif) 0 0 no-repeat;display:block;height:33px;width:50px}
+.pp_gallery .pp_arrow_previous,.pp_gallery .pp_arrow_next{margin-top:7px!important}
+a.pp_next{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_rounded/btnNext.png) 10000px 10000px no-repeat;display:block;float:right;height:100%;text-indent:-10000px;width:49%}
+a.pp_previous{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_rounded/btnNext.png) 10000px 10000px no-repeat;display:block;float:left;height:100%;text-indent:-10000px;width:49%}
+a.pp_expand,a.pp_contract{cursor:pointer;display:none;height:20px;position:absolute;right:30px;text-indent:-10000px;top:10px;width:20px;z-index:20000}
+a.pp_close{position:absolute;right:0;top:0;display:block;line-height:22px;text-indent:-10000px}
+.pp_loaderIcon{display:block;height:24px;left:50%;position:absolute;top:50%;width:24px;margin:-12px 0 0 -12px}
+#pp_full_res{line-height:1!important}
+#pp_full_res .pp_inline{text-align:left}
+#pp_full_res .pp_inline p{margin:0 0 15px}
+div.ppt{color:#fff;display:none;font-size:17px;z-index:9999;margin:0 0 5px 15px}
+div.pp_default .pp_content,div.light_rounded .pp_content{background-color:#fff}
+div.pp_default #pp_full_res .pp_inline,div.light_rounded .pp_content .ppt,div.light_rounded #pp_full_res .pp_inline,div.light_square .pp_content .ppt,div.light_square #pp_full_res .pp_inline,div.facebook .pp_content .ppt,div.facebook #pp_full_res .pp_inline{color:#000}
+div.pp_default .pp_gallery ul li a:hover,div.pp_default .pp_gallery ul li.selected a,.pp_gallery ul a:hover,.pp_gallery li.selected a{border-color:#fff}
+div.pp_default .pp_details,div.light_rounded .pp_details,div.dark_rounded .pp_details,div.dark_square .pp_details,div.light_square .pp_details,div.facebook .pp_details{position:relative}
+div.light_rounded .pp_top .pp_middle,div.light_rounded .pp_content_container .pp_left,div.light_rounded .pp_content_container .pp_right,div.light_rounded .pp_bottom .pp_middle,div.light_square .pp_left,div.light_square .pp_middle,div.light_square .pp_right,div.light_square .pp_content,div.facebook .pp_content{background:#fff}
+div.light_rounded .pp_description,div.light_square .pp_description{margin-right:85px}
+div.light_rounded .pp_gallery a.pp_arrow_previous,div.light_rounded .pp_gallery a.pp_arrow_next,div.dark_rounded .pp_gallery a.pp_arrow_previous,div.dark_rounded .pp_gallery a.pp_arrow_next,div.dark_square .pp_gallery a.pp_arrow_previous,div.dark_square .pp_gallery a.pp_arrow_next,div.light_square .pp_gallery a.pp_arrow_previous,div.light_square .pp_gallery a.pp_arrow_next{margin-top:12px!important}
+div.light_rounded .pp_arrow_previous.disabled,div.dark_rounded .pp_arrow_previous.disabled,div.dark_square .pp_arrow_previous.disabled,div.light_square .pp_arrow_previous.disabled{background-position:0 -87px;cursor:default}
+div.light_rounded .pp_arrow_next.disabled,div.dark_rounded .pp_arrow_next.disabled,div.dark_square .pp_arrow_next.disabled,div.light_square .pp_arrow_next.disabled{background-position:-22px -87px;cursor:default}
+div.light_rounded .pp_loaderIcon,div.light_square .pp_loaderIcon{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/light_rounded/loader.gif) center center no-repeat}
+div.dark_rounded .pp_top .pp_middle,div.dark_rounded .pp_content,div.dark_rounded .pp_bottom .pp_middle{background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/images/prettyPhoto/dark_rounded/contentPattern.png) top left repeat}
+div.dark_rounded .currentTextHolder,div.dark_square .currentTextHolder{color:#c4c4c4}
+div.dark_rounded #pp_full_res .pp_inline,div.dark_square #pp_full_res .pp_inline{color:#fff}
+.pp_top,.pp_bottom{height:20px;position:relative}
+* html .pp_top,* html .pp_bottom{padding:0 20px}
+.pp_top .pp_left,.pp_bottom .pp_left{height:20px;left:0;position:absolute;width:20px}
+.pp_top .pp_middle,.pp_bottom .pp_middle{height:20px;left:20px;position:absolute;right:20px}
+* html .pp_top .pp_middle,* html .pp_bottom .pp_middle{left:0;position:static}
+.pp_top .pp_right,.pp_bottom .pp_right{height:20px;left:auto;position:absolute;right:0;top:0;width:20px}
+.pp_fade,.pp_gallery li.default a img{display:none}
+/*testimonials *******************************/
+
+#testimonials ul{ margin:0; padding:0; }
+#testimonials ul li, #testimonials ul li a{ list-style:none; background:transparent; border:none !important}
+.tm_thumb{ width:100%; display:inline-block;}
+#testimonials ul li img{ width:120px; height:auto; float:left; margin:0 25px 25px 0; -webkit-border-radius:100%; -moz-border-radius:100%; border-radius:100%; }
+#testimonials ul li .tm_description{width:100%; padding:0; margin:0; display:inline-block; text-align:center;}
+#testimonials ul li .tm_description p{line-height:24px; margin-bottom:0;}
+#testimonials ul li h5{ font-weight:700; margin:40px 0 0px 0; line-height:28px; color:#ffffff; text-transform:uppercase;}
+#testimonials ul li h6{ color:#4fa731; font-weight:bold; text-transform:uppercase;}
+#testimonials ul li span a{ color:#3c3b3b;}
+#testimonials ul li span a:hover{opacity:0.6;}
+#testimonials ul li span cite{ text-transform:uppercase;}
+.quotes{ width:100%; margin: 0 auto;}
+.quovolve-box{ position:relative;}
+.quovolve-nav span a{ width:30px; height:61px; display:inline-block; text-indent:-9999px; position:absolute; top:2%;}
+.quovolve-nav span.nav-prev{ background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/testimonialsrotator/images/arrow_prev.png) no-repeat left top; left:0; display:none;}
+.quovolve-nav span.nav-next{ background:url(//sktthemesdemo.net/charity/wp-content/themes/skt-charity-pro/testimonialsrotator/images/arrow_next.png) no-repeat right top; right:0; display:none;}
+ol.nav-numbers{ text-align:center; margin-top:40px}
+ol.nav-numbers li{ list-style:none; display:inline-block; margin-right:10px;}
+ol.nav-numbers li a{ background-color:#464d51; width:11px; height:11px; border-radius:50%; display:inline-block; font-size:0px;}
+ol.nav-numbers li.active a{ background-color:#fff; }
+
+@media screen and (max-width:479px) {
+*{box-sizing:border-box;}
+section, #wrapOne{padding:50px 0;}
+.header-right{ float:none;}
+.signin_wrap .widget-left, .signin_wrap .widget-right{ float:none; display:table; width:auto; text-align:center; margin:0 auto;}
+.signin_wrap span.phoneadressinfo { margin:0 0 10px;} 
+.signin_wrap span.donateuser{ padding:0 7px;}
+.header-wrapper{ position:relative;}
+.sponserleftimage, .sponsercontent, .sponserrightimage{ width:auto; display:block; text-align:center;}
+.sponserdonate{ margin-top:10px;}
+.our-event-date-row{ width:auto; float:none; margin:0 0 10% 0;}
+.eventdate{ width:100%;}
+.one_four_page{ width:100%; float:none; margin:0 auto 10% auto; } 
+.one_four_page .thumb_four_page img{ width:100%; height:auto;}
+.ourclasses_col{ width:100%; margin-right:0; margin-bottom:10%;}
+.ourclasses_col img{ width:100%; height:auto;}
+.needyourhelp-content{ float:none; width:auto;}
+.news-box{ width:auto; margin-right:0; margin-bottom:10%; padding-bottom:0; float:none; display:inline-block;}
+.news-box .news-thumb{ width:auto; height:auto; overflow:visible; text-align:center; float:none; }
+.news{ width:auto;}
+.date-news{ position:relative; z-index:999;}
+.testimonials-wrap{padding:0;}
+#testimonials ul li{ text-align:center;}
+.cols-2 .widget-column-1, .cols-2 .widget-column-2, .cols-3 .widget-column-1, .cols-3 .widget-column-2, .cols-3 .widget-column-3, .cols-4 .widget-column-1, .cols-4 .widget-column-2, .cols-4 .widget-column-3, .cols-4 .widget-column-4{ border:none; padding:30px 0; width:auto; float:none; min-height:inherit;}
+.container { width:auto; padding:0 10px;}
+#sitemain .ourclasses_thumb, .nosidebar .ourclasses_thumb{ height:auto;}
+.wrap_one, .signin_wrap{width:auto; text-align:center;}
+.slide_info a.sldbutton{ display:table;}
+#sidebar #contactform_main input[type="text"], #sidebar #contactform_main input[type="email"], #sidebar #contactform_main input[type="tel"], #sidebar #contactform_main input[type="url"], #sidebar #contactform_main textarea{ width:100%;}
+#sitemain #testimonials ul li .tm_description, .nosidebar #testimonials ul li .tm_description{ width:auto !important;}
+.header { width:100%; padding:0;}
+.header .header-inner{ width:100%; padding:15px 0 0;}
+.header .header-inner .logo{ width:100%; float:none; text-align:center; margin:0 0 15px 0; padding:0;} .one_third_page{ float:none; width:100%; margin:0 0 5% 0;} #sidebar{ width:100%; float:none;}
+.sidebar-left{ float:none !important; width:100%;}
+.flotRight{ float:none !important;}
+.blog-post-repeat .post-thumb img{ float:none; margin-right:0; width:100%; height:100%;} .photobooth .filter-gallery{ width:auto;}
+.sitefull .photobooth .gallery ul li, .photobooth .gallery ul li{ width:100%;}
+.photobooth .filter-gallery ul li a{ padding:2px 5px;}
+.photobooth .gallery ul li img{ height: auto;}
+#sitemain .photobooth .gallery ul li, .nosidebar .photobooth .gallery ul li{ width:100%;} .content-area{ width:auto; margin:0; padding:20px 10px;}
+.site-main{ width:auto; margin:0; padding:0; float:none;} #slider{ top:0; margin:0;}
+.nivo-caption{ display:none !important;}
+.contact_left, .contact_right{ float:none; width:100%; margin-bottom:10%;} .cols-3{ width:100% !important; display:block; margin-right:0; margin-bottom:15%;}
+.copyright-txt, .design-by { text-align:center; float:none;}
+#contactform_main input[type="text"], #contactform_main input[type="email"], #contactform_main input[type="tel"], #contactform_main input[type="url"], #contactform_main textarea{width:100%;}
+.recent-post img{margin:0 2% 2% 0;} .signin_wrap{ text-align: center; line-height:25px; padding:10px 0;}
+.services-wrap, .welcome-wrap{ text-align:center;}
+.quovolve-nav span a{ bottom:10%; top:auto;}
+.searchbox{ width:100%; padding-left:0;}
+.tm_thumb, #testimonials ul li .tm_description{ float:none; width:100%;}
+#testimonials ul li .tm_description p{ text-align:left;}
+.phone-no strong{ width:auto; display:inherit;}
+.signin_wrap .right, .signin_wrap .left{ text-align:center;}
+.signin_wrap .social-icons{ width:auto;}
+.signin_wrap .left span{ float:none;}
+.header .header-inner .nav ul li a .fa, .fixed .header-inner .nav ul li a .fa{ display:none;}
+.slider-main{min-height:195px;}
+} @media screen and (min-width: 480px) and (max-width: 767px){
+#main{margin:0 auto; padding:0; width:480px;}
+section, #wrapOne{padding:50px 0;}
+*{box-sizing:border-box;}
+.header-right{ float:none;}
+.signin_wrap .widget-left, .signin_wrap .widget-right{ float:none; display:table; width:auto; text-align:center; margin:0 auto;}
+.signin_wrap span.phoneadressinfo { margin:0 0 10px;} 
+.signin_wrap span.donateuser{ padding:0 10px;}
+.header-wrapper{ position:relative;}
+.sponserleftimage, .sponsercontent, .sponserrightimage{ width:auto; display:block;}
+.sponserleftimage, .sponserrightimage{ text-align:center; display:block; clear:both;}
+.sponserdonate{ margin-top:10px;}
+.our-event-date-row{ width:auto; float:none; margin:0 0 10% 0;}
+.eventdate{ width:100%;}
+.one_four_page{ width:100%; float:none; margin:0 auto 10% auto; } 
+.one_four_page .thumb_four_page img{ width:100%; height:auto;}
+.ourclasses_col{ width:100%; margin-right:0; margin-bottom:10%;}
+.ourclasses_col img{ width:100%; height:auto;}
+.needyourhelp-content{ float:none; width:auto;}
+.news-box{ width:auto; margin-right:0; margin-bottom:10%; padding-bottom:0; float:none; display:inline-block;}
+.news-box .news-thumb{ width:auto; height:auto; overflow:visible; text-align:center; float:none; }
+.news{ width:auto;}
+.date-news{ position:relative; z-index:999;}
+.testimonials-wrap{padding:0;}
+#testimonials ul li{ text-align:center;}
+.cols-2 .widget-column-1, .cols-2 .widget-column-2, .cols-3 .widget-column-1, .cols-3 .widget-column-2, .cols-3 .widget-column-3, .cols-4 .widget-column-1, .cols-4 .widget-column-2, .cols-4 .widget-column-3, .cols-4 .widget-column-4{ border:none; padding:30px 0; width:auto; float:none; min-height:inherit;}
+.container { width:auto; padding:0 10px;}
+.ourclasses_thumb{ height:auto;}
+#sitemain .ourclasses_thumb, .nosidebar .ourclasses_thumb{ height:auto;}
+.wrap_one, .signin_wrap{width:auto; text-align:center;}
+.slide_info a.sldbutton{ display:table;}
+#sidebar #contactform_main input[type="text"], #sidebar #contactform_main input[type="email"], #sidebar #contactform_main input[type="tel"], #sidebar #contactform_main input[type="url"], #sidebar #contactform_main textarea{ width:100%;}
+#sitemain #testimonials ul li .tm_description, .nosidebar #testimonials ul li .tm_description{ width:auto !important;}
+.header { width:100%; padding:0;}
+.header .header-inner{ width:100%; padding:15px 0 0;}
+.header .header-inner .logo{ width:100%; float:none; text-align:center; margin:0 0 15px 0; padding:0;} .one_third_page{ float:none; width:100%; margin:0 0 5% 0;} #sidebar{ width:100%; float:none;}
+.sidebar-left{ float:none !important; width:100%;}
+.flotRight{ float:none !important;}
+.blog-post-repeat .post-thumb img{ float:none; margin-right:0; width:100%; height:100%;} .photobooth .filter-gallery{ width:auto;}
+.sitefull .photobooth .gallery ul li, .photobooth .gallery ul li{ width:100%;}
+.photobooth .filter-gallery ul li a{ padding:2px 5px;}
+.photobooth .gallery ul li img{ height: auto;}
+#sitemain .photobooth .gallery ul li, .nosidebar .photobooth .gallery ul li{ width:100%;} .content-area{ width:auto; margin:0; padding:20px 10px;}
+.site-main{ width:auto; margin:0; padding:0; float:none;} #slider{ top:0; margin:0;}
+.nivo-caption{ display:none !important;}
+.contact_left, .contact_right{ float:none; width:100%; margin-bottom:10%;} .copyright-txt, .design-by { text-align:center; float:none;}
+#contactform_main input[type="text"], #contactform_main input[type="email"], #contactform_main input[type="tel"], #contactform_main input[type="url"], #contactform_main textarea{width:100%;}
+.recent-post img{margin:0 2% 2% 0;} .signin_wrap{ text-align: center; line-height:25px; padding:10px 0;}
+.services-wrap, .welcome-wrap{ text-align:center;}
+.quovolve-nav span a{ bottom:10%; top:auto;}
+.searchbox{ width:100%; padding-left:0;}
+.tm_thumb, #testimonials ul li .tm_description{ float:none; width:100%;}
+#testimonials ul li .tm_description p{ text-align:left;}
+.phone-no strong{ width:auto; display:inherit;}
+.signin_wrap .right, .signin_wrap .left{ text-align:center;}
+.signin_wrap .social-icons{ width:auto;}
+.signin_wrap .left span{ float:none;}
+.header .header-inner .nav ul li a .fa, .fixed .header-inner .nav ul li a .fa{ display:none;}
+.slider-main{min-height:260px;}
+} @media screen and (max-width:1170px) and (min-width:768px) {
+.slider-main{min-height:350px;}
+*{box-sizing:border-box;}
+.container { width:auto; padding:0 10px;}
+.signin_wrap span.phoneadressinfo{ margin:0 10px 0 0;}
+.signin_wrap{ font-size:13px;}
+.header{ z-index:9999;}
+.wrap_one, .signin_wrap{width:auto;}
+.header{ padding-bottom:0;}
+.header .header-inner{ width:auto; padding:15px 0 0;}
+.header .header-inner .logo{ margin:0 auto 10px auto; padding:0; text-align:center; float:none;}
+.header-right{ float:none;}
+.signin_wrap .widget-left{ font-size:13px;}
+.signin_wrap span.donateuser{ padding:0 7px; } 
+.one_four_page img{ height:auto; width:auto;}
+.sponsercontent{ margin-right:2%;}
+.footer .phone-no{ margin-top:25px;}
+.cols-3 .widget-column-1{ margin:0 3% 0 0;}
+.cols-3 .widget-column-2{ margin:0 3% 0 0; width:36%; padding-left:2%; padding-right:2%;}
+.cols-3 .widget-column-3{ width:34.5%;}
+.cols-2 .widget-column-1, .cols-2 .widget-column-2, .cols-3 .widget-column-1, .cols-3 .widget-column-2, .cols-3 .widget-column-3, .cols-4 .widget-column-1, .cols-4 .widget-column-2, .cols-4 .widget-column-3, .cols-4 .widget-column-4{ min-height:380px; padding-top:30px; padding-bottom:30px;} .content-area{ width:auto; margin:0; padding:50px 20px;}
+.nivo-caption{ width:90%; top:50%; left:5%;}
+.nivo-controlNav{ z-index:999;}
+.slide_info a.sldbutton{ margin-top:0; }
+.slide_info h2{ font-size:30px !important; line-height:40px; }
+.slide_info p{ padding-bottom:15px;}
+.one_four_page{ width:23.5%;}
+.eventtitlelocation{ padding:3.5% 3%;}
+.ourclasses_thumb{ height:auto;}
+.services-wrap .one_third{width:33.3%;}
+.news{ width:59%; min-height:300px;}
+#sitemain .news, .nosidebar .news{ min-height:330px;}
+#sitemain .news a.read-more, .nosidebar .news a.read-more{ padding-left:0; padding-right:0; text-align:center; width:100%; left:0;}
+#sidebar #contactform_main input[type="text"], #sidebar #contactform_main input[type="email"], #sidebar #contactform_main input[type="tel"], #sidebar #contactform_main input[type="url"], #sidebar #contactform_main textarea{ width:100%;}
+#sidebar{ width:220px;}
+.site-main{ width:65%;} .BlogPost{ min-height:250px;}
+.client_lists .client{ width:14%;}
+.wrap_one .fa{ margin-bottom:30px;}
+.testimonials-wrap{ padding:0;}
+#sitemain .photobooth .gallery ul li, .nosidebar .photobooth .gallery ul li{ width:20%;}
+.threebox .chooseus-image{ width:115px; height:auto;}
+}
+@media screen and (max-width:1169px) and (min-width:980px) { 
+.header .header-inner .nav{ margin:0;}
+html{overflow-x:hidden; }
+.signin_wrap .right{ width:72%;} 
+.news{ min-height:220px;}
+.news a.read-more{left:33%;}
+#sitemain .news, .nosidebar .news{ min-height:260px !important;}
+#sidebar{ width:300px;}
+.header .header-inner .logo{ float:left; text-align:left;}
+.header .header-inner{ padding:0 0 0 20px;}
+.slide_info h2{ font-size:40px !important; line-height:50px; }
+.one_four_page .view-all-btn{display:block;}
+.image-border{height:70%;}
+.one_four_page_content{padding:15px 15px; height:77.5%;}
+.abouttowing .su-frame-align-left{ float:none !important;}
+.towing-emergency h2{ font-size:35px !important;}
+.towing-emergency h3{ font-size:26px !important;}
+}
+@media screen and (max-width: 980px){
+.toggleMenu{display: block;}
+.header .header-inner .nav{float:none; margin:0; position:relative; overflow-x:hidden; background-color:#fff; }
+.header .header-inner .nav ul{color:#000; width:100% !important; float:none !important; margin:0; padding:0;}
+.header .header-inner .nav ul li{border-top:1px #cccccc solid; display:block; float:none; text-align:left;}
+.header .header-inner .nav ul li a{padding:5px 10px !important; display:block; color:#000;}
+.header .header-inner .nav ul li a:hover{color:#ffffff;}
+.header .header-inner .nav ul.sub-menu{ }
+.header .header-inner .nav ul li ul, .header .header-inner .nav ul li ul ul{ display:block !important;}
+.header .header-inner .nav ul li ul li a:before{content:"\00BB \00a0";}
+.header .header-inner .nav ul li ul li a{padding-left:20px !important;}
+.header .header-inner .nav ul li ul li ul li a{padding-left:30px !important;}
+.header .header-inner .nav ul li ul li ul li ul li a{padding-left:40px !important;}
+.header .header-inner .nav ul li:hover > ul{ background:none !important;}
+.header .header-inner .nav ul li:hover > ul{ background: transparent !important; width:auto !important; display:block; position: relative !important; left:0; right:0; top:0;}
+.header .header-inner .nav ul li:hover ul li ul, .header .header-inner .nav ul li:hover ul li:hover > ul, .header .header-inner .nav ul li:hover ul li:hover > ul li ul{  background: transparent !important; display:block; position:relative !important;  right:0; left:0; top:0;}
+.header .header-inner .nav ul li:hover ul li:hover ul, .header .header-inner .nav ul li:hover ul li:hover ul li:hover ul{ left:0 !important;}
+.header .header-inner .nav ul li a .fa, .fixed .header-inner .nav ul li a .fa{ display:none;}
+}
