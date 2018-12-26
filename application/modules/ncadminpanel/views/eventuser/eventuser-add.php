@@ -61,22 +61,7 @@
 							<label for="event_transaction_total_amount" class="col-sm-2 control-label"><?php echo get_label('event_transaction_total_amount').get_required();?></label>
 							<div class="col-sm-<?php echo get_form_size();?>"><div class="input_box"><?php  echo form_input('event_registration_fees',set_value('event_registration_fees'),' id="causes_how_much_donation_need" class="form-control required number is_registration_input"  onkeypress="return isNumber(event)"   ');?></div></div>
 						</div>
-                         <div class="form-group event_is_registration_div">
-							<label for="event_registration_start_date" class="col-sm-2 control-label"><?php echo get_label('event_registration_start_date').get_required();?></label>
-							<div class="col-sm-<?php echo get_form_size();?>"><div class="input_box"><?php  echo form_input('event_registration_start_date',set_value('event_registration_start_date'),' class="form-control date_picker required is_registration_input" onkeypress="return isNumber(event)" ');?></div></div>
-						</div>
-                         <div class="form-group event_is_registration_div">
-							<label for="event_registration_end_date" class="col-sm-2 control-label"><?php echo get_label('event_registration_end_date').get_required();?></label>
-							<div class="col-sm-<?php echo get_form_size();?>"><div class="input_box"><?php  echo form_input('event_registration_end_date',set_value('event_registration_end_date'),' class="form-control date_picker required is_registration_input" onkeypress="return isNumber(event)" ');?></div></div>
-						</div>						
-                         <div class="form-group event_is_registration_div">
-							<label for="event_registration_max_member_count" class="col-sm-2 control-label"><?php echo get_label('event_registration_max_member_count').get_required();?></label>
-							<div class="col-sm-<?php echo get_form_size();?>"><div class="input_box"><?php  echo form_input('event_registration_max_member_count',set_value('event_registration_max_member_count'),' class="form-control required is_registration_input" onkeypress="return isNumber(event)"');?></div></div>
-						</div>
-                         <div class="form-group event_is_registration_div">
-							<label for="event_registration_remainder_alert" class="col-sm-2 control-label"><?php echo get_label('event_registration_remainder_alert').get_required();?></label>
-							<div class="col-sm-<?php echo get_form_size();?>"><div class="input_box"><?php  echo form_input('event_registration_remainder_alert',set_value('event_registration_remainder_alert'),' class="form-control date_picker required is_registration_input" ');?></div></div>
-						</div>												
+
 						<div class="form-group event_is_registration_div">
 							<label for="event_terms_and_conditions" class="col-sm-2 control-label"><?php echo get_label('event_terms_and_conditions').get_required();?></label>
 							<div class="col-sm-<?php echo get_form_size();?>"><div class="input_box"><?php  echo form_textarea('event_terms_and_conditions',set_value('event_terms_and_conditions'),' class="form-control required is_registration_input"  ');?></div></div>
@@ -129,8 +114,7 @@
 							 <label for="event_image" class="col-sm-2 control-label"><?php echo get_label('event_image');?></label>
 							 <div class="col-sm-<?php echo get_form_size();?>">
 								  <div class="input_box">
-										<div class="custom_browsefile"> 
-											<?php echo form_upload('event_image','id="event_image" class="form-control required');?> 
+										<div class="custom_browsefile"> <?php echo form_upload('event_image','id="event_image" class="form-control required');?> 
 										<div style="color:red;"><?php echo get_label('image_type_size_info');?></div>
 										   <span class="result_browsefile">											
 											   <span class="brows"></span> + <?php echo get_label('event_image');?>
@@ -138,21 +122,7 @@
 										</div>
 								  </div>
 							</div>
-						</div>
-						<div class="form-group multi_field_image">
-							 <label for="event_file_name" class="col-sm-2 control-label"><?php echo get_label('event_file_name');?></label>
-							 <div class="col-sm-<?php echo get_form_size();?>">
-								  <div class="input_box">
-										<div class="custom_browsefile"> 
-											<?php echo form_upload('event_file_name[]','id="event_file_name"  class="form-control required" ','multiple="multiple"' );?> 
-										<div style="color:red;"><?php echo get_label('image_type_size_info');?></div>
-										   <span class="result_browsefile">											
-											   <span class="brows"></span> + <?php echo get_label('event_file_name');?>
-										   </span>
-										</div>
-								  </div>
-							</div>
-						</div>															
+						</div>									
 						<div class="form-group">
 							<label for="causes_status" class="col-sm-2 control-label"><?php echo get_label('causes_status').get_required();?></label>
 							<div class="col-sm-<?php echo get_form_size();?>"><div class="input_box"><?php  echo get_status_dropdown_causes('1','','class="required" style="width:374px;" ');?></div></div>

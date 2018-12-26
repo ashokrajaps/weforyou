@@ -408,3 +408,8 @@ html{overflow-x:hidden; }
 .header .header-inner .nav ul li:hover ul li:hover ul, .header .header-inner .nav ul li:hover ul li:hover ul li:hover ul{ left:0 !important;}
 .header .header-inner .nav ul li a .fa, .fixed .header-inner .nav ul li a .fa{ display:none;}
 }
+
+.refer_code {
+    font-weight: bold !important;
+    color: green !important;
+}

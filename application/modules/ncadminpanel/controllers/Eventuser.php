@@ -7,18 +7,18 @@ Description		: Page contains promotion for discount coupon add edit and delete f
 
 ***************************/
 defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
-class Donation extends CI_Controller 
+class Eventuser extends CI_Controller 
 {
 	public function __construct() {
 		parent::__construct ();
 		$this->authentication->admin_authentication();
-		$this->module = "donation";
-		$this->module_label = get_label('donation_manage_label');
-		$this->module_labels =  get_label('donation_manage_labels');
-		$this->folder = "donation/";
-		$this->table = "causes_transaction";
+		$this->module = "eventuser";
+		$this->module_label = get_label('event_user_manage_label');
+		$this->module_labels =  get_label('event_user_manage_labels');
+		$this->folder = "eventuser/";
+		$this->table = "causes_donars";
 		$this->load->library ( 'common' );
-		$this->primary_key = 'transaction_id';
+		$this->primary_key = 'donar_id';
 	}
 	
 	/* this method used to list all records . */
@@ -38,9 +38,10 @@ class Donation extends CI_Controller
 		$having2="";	
 		$queryvar="";	
 		$where_in = "";
+		$offset=0;
 		$or_where = array ();
 		$where = array (
-				" $this->primary_key !=" => '','transaction_from'=>'causes'
+				" $this->primary_key !=" => '','donar_from'=>'event'
 		);
 		$order_by = array (
 				$this->primary_key => 'DESC' 
@@ -87,28 +88,27 @@ class Donation extends CI_Controller
          if($having1!='') {
            $this->db->having($having1);
          }
-		$select_array=array('transaction_id','transaction_refer_id','transaction_txnid','transaction_amount','transaction_payment_gateway','transaction_status_message','transaction_date_of_transfer');
+		$select_array=array('*');
 
 		$join = array(); 
-		$join [0] ['select'] = "c.causes_title";
-		$join [0] ['table'] = "causes as  c";
-		$join [0] ['condition'] = "c.causes_id = transaction_causes_id";
-		$join [0] ['type'] = "LEFT";
-        
-		$join [1] ['select'] = "CONCAT(d.donar_first_name,' ',d.donar_last_name) as donar_name,donar_contact_no";
-		$join [1] ['table'] = "causes_donars as  d";
-		$join [1] ['condition'] = "d.donar_id = transaction_donar_id";
-		$join [1] ['type'] = "LEFT";
+		$join [0] ['select'] = "e.event_title";
+		$join [0] ['table'] = "event as  e";
+		$join [0] ['condition'] = "e.event_id = donar_causes_event_id";
+		$join [0] ['type'] = "INNER";
 
-		$join [2] ['select'] = "g.payment_gateway_title";
-		$join [2] ['table'] = "payment_gateway as  g";
-		$join [2] ['condition'] = "g.payment_gateway_id = transaction_payment_gateway";
-		$join [2] ['type'] = "LEFT";
+		$join [1] ['select'] = "group_concat(',',ep.participation_name) as participation_name";
+		$join [1] ['table'] = "event_participations as ep";
+		$join [1] ['condition'] = "ep.participation_donar_id = donar_id";
+		$join [1] ['type'] = "LEFT";
+		// $totla_rows = $this->Mydb->get_num_rows($this->table.'.*', $this->table, $where,'','','',$like);
 
 		$groupby = $this->primary_key;	
 		
-		$totla_rows = $this->Mydb->get_num_join_rows($this->table.'.*', $this->table, $where,'','','',$like,'',$join,'');
-
+		$totla_rows = $this->Mydb->get_num_join_rows($this->table.'.*', $this->table, $where,'','','',$like,$groupby,$join,'');
+// echo "<br>";
+// echo $this->db->last_query();
+// print_r($totla_rows);
+// exit;
 		/* pagination part start  */
 		$admin_records = admin_records_perpage ();
 		$limit = (( int ) $admin_records == 0) ? 25 : $admin_records;
@@ -142,25 +142,18 @@ class Donation extends CI_Controller
 	}
 	/* this method used to view content...*/
 	public function view($view_id) {
-		
 		$data = $this->load_module_info ();
+		 $limit =''; $offset =0; 
+		$order_by=$like=$groupby=$join =array();
+		$join [0] ['select'] = "e.event_title";
+		$join [0] ['table'] = "event as  e";
+		$join [0] ['condition'] = "e.event_id = donar_causes_event_id";
+		$join [0] ['type'] = "INNER";
 
-		$join = $limit=$offset=''; 
-		$order_by=$like=$groupby=array();
-		$join [0] ['select'] = "c.causes_title";
-		$join [0] ['table'] = "causes as  c";
-		$join [0] ['condition'] = "c.causes_id = transaction_causes_id";
-		$join [0] ['type'] = "LEFT";
-        
-		$join [1] ['select'] = "CONCAT(d.donar_first_name,' ',d.donar_last_name) as donar_name,donar_contact_no";
-		$join [1] ['table'] = "causes_donars as  d";
-		$join [1] ['condition'] = "d.donar_id = transaction_donar_id";
+		$join [1] ['select'] = "group_concat(ep.participation_name) as participation_name";
+		$join [1] ['table'] = "event_participations as ep";
+		$join [1] ['condition'] = "ep.participation_donar_id = donar_id";
 		$join [1] ['type'] = "LEFT";
-
-		$join [2] ['select'] = "g.payment_gateway_title";
-		$join [2] ['table'] = "payment_gateway as  g";
-		$join [2] ['condition'] = "g.payment_gateway_id = transaction_payment_gateway";
-		$join [2] ['type'] = "LEFT";
 
 		$groupby = $this->primary_key;	
 		$where_array=array($this->primary_key => decode_value($view_id));

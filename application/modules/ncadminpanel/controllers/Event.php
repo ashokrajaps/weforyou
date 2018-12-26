@@ -81,11 +81,17 @@ class Event extends CI_Controller {
            $this->db->having($having1);
          }
 
-		$join = ''; 
+		$join = array(); 
         
 		$groupby = $this->primary_key;	
 		
+		$join [0] ['select'] = "c.fld_country_name as country_name";
+		$join [0] ['table'] = "countries as c";
+		$join [0] ['condition'] = "c.fld_country_id = $this->table.event_country";
+		$join [0] ['type'] = "LEFT";
+
 		$totla_rows = $this->Mydb->get_num_rows($this->table.'.*', $this->table, $where,'','','',$like);
+
 
 		/* pagination part start  */
 		$admin_records = admin_records_perpage ();
@@ -159,13 +165,26 @@ class Event extends CI_Controller {
 			->set_rules ( 'event_start_time', 'lang:event_start_time', 'required' )
 			->set_rules ( 'event_end_time', 'lang:event_end_time', 'required' )			
 			->set_rules ( 'event_have_phy_location', 'lang:event_have_phy_location', 'required' )			
-			->set_rules ( 'event_address', 'lang:event_address', 'required' )
-			->set_rules ( 'event_city_town', 'lang:event_city_town', 'required' )
-			->set_rules ( 'event_state_country', 'lang:event_state_country', 'required' )
-			->set_rules ( 'event_post_code', 'lang:event_post_code', 'required' )
-			->set_rules ( 'event_region', 'lang:event_region', 'trim' )
-			->set_rules ( 'event_country', 'lang:event_country', 'required' )
+			->set_rules ( 'event_is_registration_need', 'lang:event_is_registration_need', 'required' )	
 			->set_rules ( 'status', 'lang:status', 'required' );
+			if($this->input->post ('event_is_registration_need' ) == "yes")
+			{
+				$this->form_validation->set_rules ( 'event_registration_fees', 'lang:event_registration_fees', 'required')
+				->set_rules ( 'event_registration_start_date', 'lang:event_registration_start_date', 'required')
+				->set_rules ( 'event_registration_end_date', 'lang:event_registration_end_date', 'required')
+				->set_rules ( 'event_registration_max_member_count','lang:event_registration_max_member_count','required')
+				->set_rules ( 'event_registration_remainder_alert', 'lang:event_registration_remainder_alert', 'trim')
+				->set_rules ( 'event_terms_and_conditions', 'lang:event_terms_and_conditions', 'required');
+			}			
+			if($this->input->post ('event_have_phy_location' ) == "yes")
+			{
+				$this->form_validation->set_rules ( 'event_address', 'lang:event_address', 'required' )
+				->set_rules ( 'event_city_town', 'lang:event_city_town', 'required' )
+				->set_rules ( 'event_state_country', 'lang:event_state_country', 'required' )
+				->set_rules ( 'event_post_code', 'lang:event_post_code', 'required' )
+				->set_rules ( 'event_region', 'lang:event_region', 'trim' )
+				->set_rules ( 'event_country', 'lang:event_country', 'required' );
+			}					
 			if (!isset ( $_FILES ['event_image'] ['name'] )) 
 			{
 				$this->form_validation->set_rules ( 'event_image', 'lang:event_image', 'required|trim' );
@@ -185,6 +204,13 @@ class Event extends CI_Controller {
 						'event_country'=>post_value ( 'event_country' ),
 						'event_each_day' => ($this->input->post ('event_each_day' ) == "yes" ? 'yes' : 'no'),
 						'event_have_phy_location' => ($this->input->post ('event_have_phy_location' ) == "yes" ? 'yes' : 'no'),
+						'event_is_registration_need' => ($this->input->post ('event_is_registration_need' ) == "yes" ? 'yes' : 'no'),
+						'event_registration_fees'=>post_value ( 'event_registration_fees' ),
+						'event_registration_start_date'=>set_date_formart(post_value ( 'event_registration_start_date' )),
+						'event_registration_end_date'=>set_date_formart(post_value ( 'event_registration_end_date' )),
+						'event_registration_max_member_count'=>post_value ( 'event_registration_max_member_count' ),
+						'event_registration_remainder_alert'=>set_date_formart(post_value ( 'event_registration_remainder_alert' )),
+						'event_terms_and_conditions'=>post_value ( 'event_terms_and_conditions' ),
 						'event_status' => ($this->input->post ( 'status' ) == "1" ? '1' : '0'),
 						'event_created_on' => current_date (),
 						'event_created_ip' => get_ip (),
@@ -192,9 +218,13 @@ class Event extends CI_Controller {
  				);
 				if (isset ( $_FILES ['event_image'] ['name'] ) && $_FILES ['event_image'] ['name'] != "") 
 				{
-					$insert_array['event_image']=$this->do_multi_upload('event_image');//to upload file
+					$insert_array['event_image']=$this->do_file_upload('event_image');//to upload file
 				}				
 				$insert_id = $this->Mydb->insert ( $this->table, $insert_array );
+				if (isset ( $_FILES ['event_file_name'] ['name'] ) && $_FILES ['event_file_name'] ['name'] != "") 
+				{
+						$this->do_multi_upload("event_file_name",$insert_id);					
+				}				
 				$this->session->set_flashdata ( 'admin_success', sprintf ( $this->lang->line ( 'success_message_add' ), $this->module_label ) );
 				$result ['status'] = 'success';
 			} else {
@@ -232,13 +262,29 @@ class Event extends CI_Controller {
 			->set_rules ( 'event_description', 'lang:event_description', 'required' )
 			->set_rules ( 'event_start_date', 'lang:event_start_date', 'required' )
 			->set_rules ( 'event_end_date', 'lang:event_end_date', 'required' )
-			->set_rules ( 'event_address', 'lang:event_address', 'required' )
-			->set_rules ( 'event_city_town', 'lang:event_city_town', 'required' )
-			->set_rules ( 'event_state_country', 'lang:event_state_country', 'required' )
-			->set_rules ( 'event_post_code', 'lang:event_post_code', 'required' )
-			->set_rules ( 'event_region', 'lang:event_region', 'trim' )
-			->set_rules ( 'event_country', 'lang:event_country', 'required' )
+			->set_rules ( 'event_start_time', 'lang:event_start_time', 'required' )
+			->set_rules ( 'event_end_time', 'lang:event_end_time', 'required' )			
+			->set_rules ( 'event_have_phy_location', 'lang:event_have_phy_location', 'required' )			
+			->set_rules ( 'event_is_registration_need', 'lang:event_is_registration_need', 'required' )	
 			->set_rules ( 'status', 'lang:status', 'required' );
+			if($this->input->post ('event_is_registration_need' ) == "yes")
+			{
+				$this->form_validation->set_rules ( 'event_registration_fees', 'lang:event_registration_fees', 'required')
+				->set_rules ( 'event_registration_start_date', 'lang:event_registration_start_date', 'required')
+				->set_rules ( 'event_registration_end_date', 'lang:event_registration_end_date', 'required')
+				->set_rules ( 'event_registration_max_member_count','lang:event_registration_max_member_count','required')
+				->set_rules ( 'event_registration_remainder_alert', 'lang:event_registration_remainder_alert', 'trim')
+				->set_rules ( 'event_terms_and_conditions', 'lang:event_terms_and_conditions', 'required');
+			}			
+			if($this->input->post ('event_have_phy_location' ) == "yes")
+			{
+				$this->form_validation->set_rules ( 'event_address', 'lang:event_address', 'required' )
+				->set_rules ( 'event_city_town', 'lang:event_city_town', 'required' )
+				->set_rules ( 'event_state_country', 'lang:event_state_country', 'required' )
+				->set_rules ( 'event_post_code', 'lang:event_post_code', 'required' )
+				->set_rules ( 'event_region', 'lang:event_region', 'trim' )
+				->set_rules ( 'event_country', 'lang:event_country', 'required' );
+			}					
 			
 			if ($this->form_validation->run () == TRUE) {
 
@@ -253,17 +299,29 @@ class Event extends CI_Controller {
 						'event_post_code'=>post_value ( 'event_post_code' ),
 						'event_region'=>post_value ( 'event_region' ),
 						'event_country'=>post_value ( 'event_country' ),
+						'event_each_day' => ($this->input->post ('event_each_day' ) == "yes" ? 'yes' : 'no'),
+						'event_have_phy_location' => ($this->input->post ('event_have_phy_location' ) == "yes" ? 'yes' : 'no'),
+						'event_is_registration_need' => ($this->input->post ('event_is_registration_need' ) == "yes" ? 'yes' : 'no'),
+						'event_registration_fees'=>post_value ( 'event_registration_fees' ),
+						'event_registration_start_date'=>set_date_formart(post_value ( 'event_registration_start_date' )),
+						'event_registration_end_date'=>set_date_formart(post_value ( 'event_registration_end_date' )),
+						'event_registration_max_member_count'=>post_value ( 'event_registration_max_member_count' ),
+						'event_registration_remainder_alert'=>set_date_formart(post_value ( 'event_registration_remainder_alert' )),
+						'event_terms_and_conditions'=>post_value ( 'event_terms_and_conditions' ),
 						'event_status' => ($this->input->post ( 'status' ) == "1" ? '1' : '0'),
-						'event_updated_on' => current_date (),
-						'event_updated_ip' => get_ip (),
-						'event_updated_by' => get_admin_id (),
+						'event_created_on' => current_date (),
+						'event_created_ip' => get_ip (),
+						'event_created_by' => get_admin_id (),
  				);
 				if (isset ( $_FILES ['event_image'] ['name'] ) && $_FILES ['event_image'] ['name'] != "") 
 				{
-					$update_array['event_image']=$this->do_multi_upload('event_image');//to upload file
+					$update_array['event_image']=$this->do_file_upload('event_image');//to upload file
 				} 				
 				$res=$this->Mydb->update ( $this->table, array ($this->primary_key => $record[$this->primary_key] ), $update_array );
-
+				if (isset ( $_FILES ['event_file_name'] ['name'] ) && $_FILES ['event_file_name'] ['name'] != "") 
+				{
+						$this->do_multi_upload("event_file_name",$id);					
+				}
 				$this->session->set_flashdata ( 'admin_success', sprintf ( $this->lang->line ( 'success_message_edit' ), $this->module_label ) );
 				$response ['status'] = 'success';
 			} else {
@@ -360,7 +418,51 @@ class Event extends CI_Controller {
 		echo json_encode ( $response );
 		exit ();
 	}
-	public function do_multi_upload($file_name='')
+
+public function do_multi_upload($file_name, $insert_id) 
+{	
+		    $cpt = count($_FILES[$file_name]['name']);
+		if (! empty ( $file_name )) 
+		{
+			$event_image_arary=array();
+			$insert_id = $insert_id;
+		    $files = $_FILES;
+			for($i = 0; $i < $cpt; $i ++) 
+			{
+				$image_data=array();
+				$_FILES [$file_name] ['name'] = $files [$file_name] ['name'] [$i];
+				$_FILES [$file_name] ['type'] = $files [$file_name] ['type'] [$i];
+				$_FILES [$file_name] ['tmp_name'] = $files [$file_name] ['tmp_name'][$i];
+				$_FILES [$file_name] ['error'] = $files [$file_name] ['error'] [$i];
+				$_FILES [$file_name] ['size'] = $files [$file_name] ['size'] [$i];
+
+				$config['upload_path']=constant ( 'event_upload_path' );
+				$config['allowed_types']=constant ( 'image_allowed_types' );
+				$config['max_size']     = constant ( 'image_max_size' );					
+				$config['encrypt_name']=true;
+				$config['remove_spaces']=true;					
+				$this->load->library('upload',$config);	
+				if(!$this->upload->do_upload($file_name))
+				{
+					$error=$this->upload->display_errors();						
+					$response = array("status"=>"error","message"=>$error);
+					echo json_encode($response); 
+					exit;												
+			    }
+			    else
+			    {
+                    $image_data = $this->upload->data();//store the file info
+					$event_image_arary = array ( 'event_file_event_id' => $insert_id,
+										'event_file_type'=>'image',
+										'event_file_name' => $image_data['file_name'],
+										);
+					$this->Mydb->insert ($this->table_event_attachment, $event_image_arary );
+
+				}
+			}
+		}
+	}							
+	public function do_file_upload($file_name='')
 	{
 					$table_cause_file_array=array();	
 					if (isset ( $_FILES [$file_name] ['name'] ) && $_FILES [$file_name] ['name'] != "") 
@@ -409,12 +511,15 @@ class Event extends CI_Controller {
 		
 		$data = $this->load_module_info ();
 			$join = $limit=$offset=''; 
-			$order_by=$like=$groupby=array();
+			$order_by=$like=$groupby=$join=array();
 			$join [0] ['select'] = "s.status_title";
 			$join [0] ['table'] = "status as  s";
 			$join [0] ['condition'] = "s.status_id = event_status";
 			$join [0] ['type'] = "LEFT";
-			
+			$join [1] ['select'] = "c.fld_country_name as country_name";
+			$join [1] ['table'] = "countries as c";
+			$join [1] ['condition'] = "c.fld_country_id = $this->table.event_country";
+			$join [1] ['type'] = "LEFT";			
 			$groupby = $this->primary_key;	
 			$where_array=array($this->primary_key => decode_value($view_id));
 			$result = $this->Mydb->get_all_records ($this->table.'.*',$this->table,$where_array,$limit,$offset,$order_by,$like,$groupby,$join);

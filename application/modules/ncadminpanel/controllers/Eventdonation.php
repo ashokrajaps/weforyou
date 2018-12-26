@@ -7,15 +7,15 @@ Description		: Page contains promotion for discount coupon add edit and delete f
 
 ***************************/
 defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
-class Donation extends CI_Controller 
+class Eventdonation extends CI_Controller 
 {
 	public function __construct() {
 		parent::__construct ();
 		$this->authentication->admin_authentication();
-		$this->module = "donation";
-		$this->module_label = get_label('donation_manage_label');
-		$this->module_labels =  get_label('donation_manage_labels');
-		$this->folder = "donation/";
+		$this->module = "eventdonation";
+		$this->module_label = get_label('event_donation_manage_label');
+		$this->module_labels =  get_label('event_donation_manage_labels');
+		$this->folder = "eventdonation/";
 		$this->table = "causes_transaction";
 		$this->load->library ( 'common' );
 		$this->primary_key = 'transaction_id';
@@ -40,7 +40,7 @@ class Donation extends CI_Controller
 		$where_in = "";
 		$or_where = array ();
 		$where = array (
-				" $this->primary_key !=" => '','transaction_from'=>'causes'
+				" $this->primary_key !=" => '','transaction_from'=>'event'
 		);
 		$order_by = array (
 				$this->primary_key => 'DESC' 
@@ -90,9 +90,9 @@ class Donation extends CI_Controller
 		$select_array=array('transaction_id','transaction_refer_id','transaction_txnid','transaction_amount','transaction_payment_gateway','transaction_status_message','transaction_date_of_transfer');
 
 		$join = array(); 
-		$join [0] ['select'] = "c.causes_title";
-		$join [0] ['table'] = "causes as  c";
-		$join [0] ['condition'] = "c.causes_id = transaction_causes_id";
+		$join [0] ['select'] = "e.event_title";
+		$join [0] ['table'] = "event as  e";
+		$join [0] ['condition'] = "e.event_id = transaction_causes_id";
 		$join [0] ['type'] = "LEFT";
         
 		$join [1] ['select'] = "CONCAT(d.donar_first_name,' ',d.donar_last_name) as donar_name,donar_contact_no";
@@ -147,11 +147,11 @@ class Donation extends CI_Controller
 
 		$join = $limit=$offset=''; 
 		$order_by=$like=$groupby=array();
-		$join [0] ['select'] = "c.causes_title";
-		$join [0] ['table'] = "causes as  c";
-		$join [0] ['condition'] = "c.causes_id = transaction_causes_id";
+		$join [0] ['select'] = "e.event_title";
+		$join [0] ['table'] = "event as  e";
+		$join [0] ['condition'] = "e.event_id = transaction_causes_id";
 		$join [0] ['type'] = "LEFT";
-        
+		        
 		$join [1] ['select'] = "CONCAT(d.donar_first_name,' ',d.donar_last_name) as donar_name,donar_contact_no";
 		$join [1] ['table'] = "causes_donars as  d";
 		$join [1] ['condition'] = "d.donar_id = transaction_donar_id";

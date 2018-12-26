@@ -447,3 +447,7 @@ h1.product_title, p.price{ margin-bottom:10px;}
 .prev-page a:hover, .next-page a:hover{ color:#ffffff; background-color:#4fa731;}
 .singleright{float:left;}
 .singleleft{float:right;}
+.refer_code {
+    font-weight: bold !important;
+    color: green !important;
+}

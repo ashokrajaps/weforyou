@@ -5,13 +5,15 @@ document.write('<script type="text/javascript" src="'+lod_lib+'bootstrap-datetim
             $(function () {
                 $('.date_picker').datetimepicker({
                    format: 'DD-MM-YYYY',
-                   minDate:new Date(Date.now()+1*24*60*60*1000),
+                   // minDate:new Date(Date.now()+1*24*60*60*1000),
                 });
                 $('.time_picker').datetimepicker({
                    format: 'HH:mm',
                 }); 
           var trigger_data=false;
+          var trigger_data_event=false;
 		select_phy_location_yes_no(trigger_data);
+		select_registration_rnr(trigger_data_event);
             });
   function select_phy_location_yes_no(trigger_data)
   { 	  
@@ -27,3 +29,18 @@ document.write('<script type="text/javascript" src="'+lod_lib+'bootstrap-datetim
 		$('.event_phy_location_div').hide();	
 	}
 }            
+
+  function select_registration_rnr(trigger_data)
+  { 	  
+	var donation_val=$("input[name=event_is_registration_need]:checked").attr('value');	
+	if(donation_val =="yes")
+	{
+		$('.event_is_registration_div').show();
+		$('.is_registration_input').attr('required');	
+	}
+	else
+	{
+		$('.is_registration_input').removeClass('required');	
+		$('.event_is_registration_div').hide();	
+	}
+}

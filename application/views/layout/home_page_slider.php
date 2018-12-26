@@ -1,3 +1,15 @@
+
+<?php 
+$recent_event=get_event_registration_remainder_alert();
+	if(!empty($recent_event))
+	{
+?>
+		<div class="alert alert-info" style="display: block !important;">
+		  <strong>Info!</strong> <a href="<?php echo base_url().'event/'.$recent_event['event_id']?>">"<?php echo ucwords($recent_event['event_title'])."-".date('Y',strtotime($recent_event['event_registration_end_date']));?>"  registration window remains open until <?php echo date('jS F Y',strtotime($recent_event['event_registration_end_date']));?>. click here for more info</a>
+		</div>
+<?php
+	}
+?>
 								<!-- slider -->
 								<div class="slider-main">
 									<div id="slider" class="nivoSlider">

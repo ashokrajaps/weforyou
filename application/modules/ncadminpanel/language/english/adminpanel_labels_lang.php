@@ -207,12 +207,15 @@ $lang['event_state_country'] = "State/Country";
 $lang['event_post_code'] = "Postcode";
 $lang['event_region'] = "Region";
 $lang['event_country'] = "Country";
-$lang['event_image'] = "Image";
+$lang['event_image'] = "Banner Image";
 $lang['event_created_on'] = "Created on";
 $lang['event_status'] = "Status";
 $lang['event_have_phy_location'] = "This event have a physical location";
 $lang['event_start_end_time'] = "start/end times applying to each day";
 $lang['event_all_day'] = "All Day";
+$lang['event_is_registration_need'] = "is registration need";
+$lang['event_registration_fees'] = "registration fees";
+
 
 $lang['event_title_exists'] = "Event Title Already Exist";
 
@@ -234,8 +237,8 @@ $lang['enquiry_type'] = "Type";
 $lang['enquiry_subject'] = "Subject";
 $lang['enquiry_created_on'] = "Created Date";
 
-$lang['donation_manage_label'] = "Donation";
-$lang['donation_manage_labels'] = "Donations";
+$lang['donation_manage_label'] = "Causes Donation";
+$lang['donation_manage_labels'] = "Causes Donations";
 
 $lang['donar_name'] = "Donar Name";
 $lang['donar_contact_no'] = "Donar Contact No";
@@ -255,9 +258,29 @@ $lang['transaction_ip'] = "Ip Address";
 $lang['transaction_remarks'] = "Remarks ";
 
 
+$lang['event_first_name'] = "First Name";
+$lang['event_last_name'] = "Last Name";
+$lang['event_name'] = "Name";
+$lang['event_email_address'] = "Email Address";
+$lang['event_contact_no'] = "Contact No";
+$lang['event_alternative_contact_no'] = "Alternative Contact No";
 
+$lang['event_file_name'] = "Event Bg Image";
+$lang['event_donar_contact_no'] = "Contact No";
+$lang['event_donation_manage_label'] = "Event Donation";
+$lang['event_donation_manage_labels'] = "Event Donations";
+$lang['event_transaction_total_amount'] = "Registration Amount";
+$lang['event_terms_and_conditions'] = "Term & Condition";
+$lang['event_registration_date'] = "event registration date";
+$lang['event_registration_start_date'] = "event registration start date";
+$lang['event_registration_end_date'] = "event registration end date";
+$lang['event_registration_max_member_count'] = "event registration max member count";
+$lang['event_registration_remainder_alert'] = "event registration remainder alert";
+$lang['event_participation_name'] = "event participation name";
 
-
-
+$lang['event_user_manage_label'] = "Event User  List";
+$lang['event_user_manage_labels'] = "Event User  Lists";
+$lang['event_title_name'] = "Event Title";
+$lang['donar_refer_id'] = "Registration Code";
 
 

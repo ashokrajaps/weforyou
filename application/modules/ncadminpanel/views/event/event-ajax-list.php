@@ -24,6 +24,8 @@
                     </div>
             </th>
 			<th><?php echo get_label('event_title');?><?php echo add_sort_by('event_title',$module); ?></th>
+			<th><?php echo get_label('event_is_registration_need');?><?php echo add_sort_by('event_is_registration_need',$module); ?></th>
+			<th><?php echo get_label('event_registration_fees');?><?php echo add_sort_by('event_registration_fees',$module); ?></th>
 			<th><?php echo get_label('event_country');?><?php echo add_sort_by('event_country',$module); ?></th>
 			<th><?php echo get_label('event_post_code');?><?php echo add_sort_by('event_post_code',$module); ?></th>
 			<th><?php echo get_label('event_city_town');?><?php echo add_sort_by('event_city_town',$module); ?></th>
@@ -46,7 +48,9 @@
 				</div>
 			</td>	
 			<td><?php echo output_value($val['event_title']);?></td>
-			<td><?php echo output_value($val['event_country']);?></td>
+			<td><?php echo output_value($val['event_is_registration_need']);?></td>
+			<td><?php echo output_value($val['event_registration_fees']);?></td>
+			<td><?php echo output_value($val['country_name']);?></td>
 			<td><?php echo output_value($val['event_post_code']);?></td>
 			<td><?php echo output_value($val['event_city_town']);?></td>
 			<td><?php echo ($val['event_created_on'] !='' && $val['event_created_on'] !="NULL" && $val['event_created_on'] != '0000-00-00 00:00:00' )?get_date_formart($val['event_created_on']):"N/A";?></td>
@@ -71,6 +75,9 @@
                     </div>
             </th>
 			<th><?php echo get_label('event_title');?><?php echo add_sort_by('event_title',$module); ?></th>
+			<th><?php echo get_label('event_is_registration_need');?><?php echo add_sort_by('event_is_registration_need',$module); ?></th>
+			<th><?php echo get_label('event_registration_fees');?><?php echo add_sort_by('event_registration_fees',$module); ?></th>
+			
 			<th><?php echo get_label('event_country');?><?php echo add_sort_by('event_country',$module); ?></th>
 			<th><?php echo get_label('event_post_code');?><?php echo add_sort_by('event_post_code',$module); ?></th>
 			<th><?php echo get_label('event_city_town');?><?php echo add_sort_by('event_city_town',$module); ?></th>

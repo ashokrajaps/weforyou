@@ -39,6 +39,7 @@ $lang['success_message_pending'] = "The Selected %s has been pending successfull
 $lang['success_message_ungroup'] = "The Selected %s has been ungrouped successfully.";
 $lang['success_message_sequence'] = "The Selected %s Sort Order has been updated successfully.";
 $lang['success_message_add'] = "%s has been added successfully.";
+$lang['success_message_registration'] = "Your team is registered with us. Your registration code is <span class='refer_code'> [REFERID] </span>. Please contact [SUPPORT_CONTACT_NO] for further..";
 $lang['success_message_update'] = "%s updated successfully.";
 
 $lang['upload_valid_image'] = "Upload Error file extension is not allowed. You can only upload JPG, JPEG, PNG, GIF files.";

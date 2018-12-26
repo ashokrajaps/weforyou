@@ -38,7 +38,7 @@
 		</tr>
 		<tr>
 			<td><?php echo get_label('event_country');?></td>
-			<td><?php echo output_value($result['event_country']); ?></td>
+			<td><?php echo output_value($result['country_name']); ?></td>
 		</tr>
 		<?php if($result['event_image']!='') { 
 				$event_image=constant('event_path').str_replace(".", "_t.", $result['event_image']);

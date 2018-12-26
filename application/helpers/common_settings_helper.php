@@ -1099,6 +1099,36 @@ if ( ! function_exists('get_user_name_slug'))
 		return $u_fname;
 	}
 }
+if ( ! function_exists('get_event_registration_remainder_alert'))
+{
+	function get_event_registration_remainder_alert()
+	{ 
+		$CI = & get_instance ();
+		$result=array();
+		$table = 'event';
+		$order=array('event_registration_start_date'=>'asc');
+		$where_arary=array("event_status"=>'1','event_registration_end_date >='=>date("Y-m-d"));
+		$result = $CI->Mydb->get_record ( '*', $table, $where_arary,$order );
+		// echo $CI->Mydb->print_query();
+		// exit;
+			return $result;
+	}
+}
+if ( ! function_exists('get_admin_setting'))
+{
+	function get_admin_setting()
+	{ 
+		$CI = & get_instance ();
+		$result=array();
+		$table = 'master_admin_settings';
+		$order=array('settings_site_title'=>'asc');
+		$where_arary=array("settings_id"=>'1');
+		$result = $CI->Mydb->get_record ( '*', $table, $where_arary,$order );
+		// echo $CI->Mydb->print_query();
+		// exit;
+			return $result;
+	}
+}
 /* Get Admin Status dropdown */
 if (! function_exists ( 'get_area_of_interest_dropdown' )) {
 	function get_area_of_interest_dropdown($selected = null, $addStatus=array(),$extra=null) 
@@ -1139,5 +1169,22 @@ if (! function_exists ( 'get_event_address' )) {
 		
 		$extra = ($extra == "")?  'class="" id="status" multiple' : $extra;
 		return form_dropdown ( 'volunteer_area_of_interest[]', $status, $selected, $extra );
+	}
+}
+if(!function_exists('get_member_dd'))
+{
+	function get_member_dd($count=2,$name='',$selected='',$extra='')
+	{
+		$data=array();
+		if($count>0)
+		{
+			for($i=1;$i<=$count;$i++)
+			{
+				$data[$i] = stripslashes($i);
+			}
+		}
+		$extra=($extra!='')?  $extra : 'class="form-control" id="'.$name.'" ' ;
+		 
+		return  form_dropdown($name,$data,$selected,$extra);
 	}
 }

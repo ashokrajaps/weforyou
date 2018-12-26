@@ -83,3 +83,9 @@ $lang['volunteer_previous_experience'] = "Do you have previous volunteer experie
 $lang['volunteer_exp_if_yes_where'] = "If yes, where";
 $lang['volunteer_passionate_social_service'] = "What makes you passionate for social service";
 $lang['volunteer_profile_image'] = "Profile Image";
+
+$lang['event_label'] = "Event";
+$lang['event_labels'] = "Events";
+$lang['donar_college_name'] = "College Name";
+$lang['donar_event_team_name'] = "Team Name";
+$lang['donar_alternative_contact_no'] = "Alternative Contact No";

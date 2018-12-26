@@ -20,6 +20,8 @@
                 <li><a href="<?php echo admin_url()."donation"?>"> <?php echo get_label('donation_manage_label');?></a></li> 
                 <li><a href="<?php echo admin_url()."volunteer"?>"> <?php echo get_label('volunteer_manage_labels');?></a></li> 
                 <li><a href="<?php echo admin_url()."event"?>"> <?php echo get_label('event_manage_labels');?></a></li> 
+                <li><a href="<?php echo admin_url()."eventuser"?>"> <?php echo get_label('event_user_manage_label');?></a></li> 
+                <li><a href="<?php echo admin_url()."eventdonation"?>"> <?php echo get_label('event_donation_manage_label');?></a></li> 
                 <li><a href="<?php echo admin_url()."enquiry"?>"> <?php echo get_label('enquiry_manage_label');?></a></li> 
 				
                 </ul>
