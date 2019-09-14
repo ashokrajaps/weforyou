@@ -1,7 +1,6 @@
 <?php 
     echo get_template('layout/head_section');
     echo get_template('layout/header');
-    
 ?>
 								<!-- <div class="innerbanner">
 									<img src="<?php echo base_url('media/images/default-banner.jpg');?>" alt="">
