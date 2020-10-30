@@ -88,7 +88,7 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 
 /* URL settings  */
 $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS']!=='off' || $_SERVER['SERVER_PORT']==443) ? "https" : "http";
-define('BASE_URL', "$protocol://$_SERVER[SERVER_NAME]/" );
+define('BASE_URL', "$protocol://$_SERVER[SERVER_NAME]/weforyou/" );
 define('media_image_url', BASE_URL.'media/images/' );
 /*  Length */
 define('PASSWORD_LENGTH',6);

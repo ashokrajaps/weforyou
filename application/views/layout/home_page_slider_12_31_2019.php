@@ -4,23 +4,11 @@ $recent_event=get_event_registration_remainder_alert();
 	if(!empty($recent_event))
 	{
 ?>
-<!-- 		<div class="alert alert-info" style="display: block !important;">
-		  <strong>Info!</strong> <a href="<?php echo base_url().'event/'.$recent_event['event_id']?>">"<?php echo ucwords($recent_event['event_title'])."-".date('Y',strtotime($recent_event['event_registration_end_date']));?>"  registration window remains open until <?php echo date('jS F Y',strtotime($recent_event['event_registration_end_date']));?>. click here for more info</a>
-		</div> -->
-<?php
-	}
-$event_notify=get_event_notify();
-	if(!empty($event_notify))
-	{
-		if(strtotime($event_notify["event_start_date"]) >=strtotime(current_date()))
-		{
-?>
 		<div class="alert alert-info" style="display: block !important;">
-		  <strong>Info!</strong> <a href="<?php echo base_url().'event/'.$event_notify['event_id']?>">"<?php echo ucwords($event_notify['event_title']);?>". click here for more info</a>
+		  <strong>Info!</strong> <a href="<?php echo base_url().'event/'.$recent_event['event_id']?>">"<?php echo ucwords($recent_event['event_title'])."-".date('Y',strtotime($recent_event['event_registration_end_date']));?>"  registration window remains open until <?php echo date('jS F Y',strtotime($recent_event['event_registration_end_date']));?>. click here for more info</a>
 		</div>
 <?php
-	}	
-}
+	}
 ?>
 								<!-- slider -->
 								<div class="slider-main">

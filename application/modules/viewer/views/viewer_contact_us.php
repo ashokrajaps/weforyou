@@ -3,7 +3,12 @@
     echo get_template('layout/header');
     
 ?>
-							
+
+<style type="text/css">
+.addrcls{
+	margin-left: 63px;
+}
+</style>							
 <div class="content-area">
 	<div class="middle-align">
 		<h1 >Contact Us</h1>
@@ -64,10 +69,13 @@
 			<div class="col-sm-6">
 											<div class="panel panel-default">
 											<div class="panel-body">
-											<p>No 50, ECR Main Road, Near RTO Office, Thiruvanmiyur, Chennai-41 </p>
+											<p><strong>Address:</strong> Weforyou
+3/28 C Sivan Kovil Street,<br>
+<span class="addrcls">Viswambal Samuthiram (South),</span><br>
+<span class="addrcls">Thuraiyur(TK), Trichy - 621003</span> </p>
 												<div class="phone-no">
 													<p>
-														<strong>Phone:</strong>+91 9551203896
+														<strong>Phone:</strong>+91 99443 98056 / +91 90253 61213</span>
 													</p>
 													<p>
 														<strong>E-mail:</strong>
@@ -78,16 +86,6 @@
 														<a href="<?php echo base_url();?>" target="_blank">www.weforyou.ngo</a>
 													</p>
 												</div>
-												<!-- <h6>Follow Us</h6>
-												<div class="social-icons">
-													<a href="#" target="_blank" class="fa fa-facebook fa-lg" title="facebook"></a>
-													<a href="#" target="_blank" class="fa fa-twitter fa-lg" title="twitter"></a>
-													<a href="#" target="_blank" class="fa fa-linkedin fa-lg" title="linkedin"></a>
-													<a href="#" target="_blank" class="fa fa-pinterest fa-lg" title="pinterest"></a>
-													<a href="#" target="_blank" class="fa fa-google-plus fa-lg" title="google-plus"></a>
-													<a href="#" target="_blank" class="fa fa-youtube fa-lg" title="youtube"></a>
-													<a href="#" target="_blank" class="fa fa-instagram fa-lg" title="instagram"></a>
-												</div> -->
 											</div>
 											</div>
 											

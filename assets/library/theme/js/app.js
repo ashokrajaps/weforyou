@@ -18,7 +18,7 @@ $(function() {
 
 $(function() {
 	return $('select').chosen({
-		  "disable_search": true
+		  //"disable_search": true
 	});
 });
 

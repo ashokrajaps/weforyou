@@ -122,7 +122,7 @@
                          <div class="form-group event_phy_location_div"  id="">
 							<label for="event_country" class="col-sm-2 control-label"><?php echo get_label('event_country').get_required();?></label>
 							<div class="col-sm-<?php echo get_form_size();?>"><div class="input_box">
-							<?php  echo get_country_list_dd('event_country','','class="form-control epl_cls select_search event_phy_location_class required" ');?>
+							<?php  echo get_country_list_dd('event_country',73,'class="form-control epl_cls select_search event_phy_location_class required" ');?>
 								</div></div>
 						</div>																					
 						<div class="form-group multi_field_image">

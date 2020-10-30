@@ -54,5 +54,6 @@ $route['donation/pay/(:any)/(:any)'] = 'donation/pay/$1/$2';
 $route['donation/status/(:num)'] = 'donation/status/$1';
 $route['donation/(:num)'] = 'donation/index/$1';
 $route['event/(:num)'] = 'event/index/$1';
+$route['viewer/(:num)'] = 'viewer/index/$1';
 
 $route['translate_uri_dashes'] = FALSE;

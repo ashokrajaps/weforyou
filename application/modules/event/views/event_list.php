@@ -86,8 +86,22 @@
 <?php        
         }
     }    
-?>            
-                <img width="226" height="219" src="<?php echo $event_details['event_image']; ?>" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="<php echo $event_details['event_title']; ?>">
+?>   
+<?php if($event_id == 12)
+{?>
+    <div class="row">
+        <div class="col-md-6"> 
+             <img width="500" height="700" src="<?php echo media_url()."weforeduction2020_1.jpg"?>" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="<?php echo $event_details['event_title']; ?>">                
+        </div>
+        <div class="col-md-6"> 
+             <img width="500" height="700" src="<?php echo $event_details['event_image']; ?>" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="<?php echo $event_details['event_title']; ?>">    
+        </div>
+    </div>
+<?php } else {                 ?>    
+
+
+                <img width="226" height="219" src="<?php echo $event_details['event_image']; ?>" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="<?php echo $event_details['event_title']; ?>">
+<?php }  ?>    
 
                 </div>
                 <p>
@@ -110,6 +124,27 @@
 <?php    
       }                
 ?>
+<?php if($event_id == 12)
+{?>
+                        <div class="col-md-12">
+                                            <p><strong><span style="color:#4fa731;">Place Of Admission In Tamil Nadu
+:</span></strong> Weforyou
+3/28 C Sivan Kovil Street,<br>
+<span class="addrcls">Viswambal Samuthiram (South),</span><br>
+<span class="addrcls">Thuraiyur(TK), Trichy - 621003</span> </p>
+                                    <div class="phone-no">
+                                        <p> <strong>Date:</strong>07-09-2020 to 13-09-2020</p>
+                                        <p> <strong>Eligiblity:</strong>10th Pass</p>
+                                                <p>                                                 <strong>Phone:</strong>+91 99443 98056 / +91 90253 61213</span></p>
+                                        <p> <strong>Course Details:</strong> <a target="_blank" href="<?php echo media_url()." Course Details.pdf "?>">Click Here</a> </p>
+                                    </div>
+                        </div>    
+     <a href="<?php echo base_url()."viewer/educationreg"?>"><span class="col-md-4">Click Here To Register Now</span></a>
+<?php }                 ?>    
+<?php if($event_id == 11)
+{?>
+                <span class=iframcls><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124345.91209256!2d80.19411946045676!3d13.111235542005842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52659192d1ae61%3A0xd1cbef152a7abf8f!2sDon%20Bosco%20Beatitudes%20Social%20Welfare%20Centre!5e0!3m2!1sen!2sin!4v1577522081082!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe></span>
+<?php }                 ?>
         </div> 
 <?php
 if($event_details['event_is_registration_need'] == "yes")

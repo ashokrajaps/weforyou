@@ -27,10 +27,10 @@
                          <div class="thumbnail">
       <a href="<?php echo $causes_details['causes_image']; ?>">
         <img src="<?php echo $causes_details['causes_image']; ?>" alt="" class="img img-rounded"/>
+      </a>
         <div class="caption">
             <p><?php echo output_val($causes_details['causes_description']); ?></p>
         </div>
-      </a>
     </div>
     <form class="form" style="background-color:#f8f8f8;padding:10px 10px 10px 10px;">
            <h4> Bank Account Details</h4>
@@ -47,7 +47,7 @@
            </div>
            </form>
                         </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-6" style="display: none">
                             
                                 <div class="cards">
                                     <div class="body">

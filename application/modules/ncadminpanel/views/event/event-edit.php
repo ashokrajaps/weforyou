@@ -48,6 +48,7 @@
 								    <input type="checkbox" id="event_each_day" name="event_each_day" value="yes" <?php echo $checked3; ?> >All Day
 									</div></div>						    
 						</div>
+
 				<div class="form-group">
                     <label for="event_is_registration_need" class="col-sm-2 control-label"><?php echo get_label('event_is_registration_need').get_required();?></label>
 						<div class="col-sm-<?php echo get_form_size();?>">
@@ -69,19 +70,19 @@
 						</div>
                          <div class="form-group event_is_registration_div">
 							<label for="event_registration_start_date" class="col-sm-2 control-label"><?php echo get_label('event_registration_start_date').get_required();?></label>
-							<div class="col-sm-<?php echo get_form_size();?>"><div class="input_box"><?php  echo form_input('event_registration_start_date',get_date_formart($records['event_registration_start_date']),' class="form-control date_picker required" onkeypress="return isNumber(event)" ');?></div></div>
+							<div class="col-sm-<?php echo get_form_size();?>"><div class="input_box"><?php  echo form_input('event_registration_start_date',get_date_formart($records['event_registration_start_date']),' class="form-control date_picker required is_registration_input" onkeypress="return isNumber(event)" ');?></div></div>
 						</div>
                          <div class="form-group event_is_registration_div">
 							<label for="event_registration_end_date" class="col-sm-2 control-label"><?php echo get_label('event_registration_end_date').get_required();?></label>
-							<div class="col-sm-<?php echo get_form_size();?>"><div class="input_box"><?php  echo form_input('event_registration_end_date',get_date_formart($records['event_registration_end_date']),' class="form-control date_picker required" onkeypress="return isNumber(event)" ');?></div></div>
+							<div class="col-sm-<?php echo get_form_size();?>"><div class="input_box"><?php  echo form_input('event_registration_end_date',get_date_formart($records['event_registration_end_date']),' class="form-control date_picker requiredis_registration_input" onkeypress="return isNumber(event)" ');?></div></div>
 						</div>						
                          <div class="form-group event_is_registration_div">
 							<label for="event_registration_max_member_count" class="col-sm-2 control-label"><?php echo get_label('event_registration_max_member_count').get_required();?></label>
-							<div class="col-sm-<?php echo get_form_size();?>"><div class="input_box"><?php  echo form_input('event_registration_max_member_count',stripslashes($records['event_registration_max_member_count']),' class="form-control required" onkeypress="return isNumber(event)"');?></div></div>
+							<div class="col-sm-<?php echo get_form_size();?>"><div class="input_box"><?php  echo form_input('event_registration_max_member_count',stripslashes($records['event_registration_max_member_count']),' class="form-control requiredis_registration_input" onkeypress="return isNumber(event)"');?></div></div>
 						</div>
                          <div class="form-group event_is_registration_div">
 							<label for="event_registration_remainder_alert" class="col-sm-2 control-label"><?php echo get_label('event_registration_remainder_alert').get_required();?></label>
-							<div class="col-sm-<?php echo get_form_size();?>"><div class="input_box"><?php  echo form_input('event_registration_remainder_alert',stripslashes($records['event_registration_remainder_alert']),' class="form-control date_picker required" ');?></div></div>
+							<div class="col-sm-<?php echo get_form_size();?>"><div class="input_box"><?php  echo form_input('event_registration_remainder_alert',stripslashes($records['event_registration_remainder_alert']),' class="form-control date_picker requiredis_registration_input" ');?></div></div>
 						</div>
 						<div class="form-group event_is_registration_div">
 							<label for="event_terms_and_conditions" class="col-sm-2 control-label"><?php echo get_label('event_terms_and_conditions').get_required();?></label>

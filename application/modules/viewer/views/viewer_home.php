@@ -2,9 +2,7 @@
     echo get_template('layout/head_section');
     echo get_template('layout/header');
     echo get_template('layout/home_page_slider');
-    // echo get_template('layout/latest_causes_list');
-    // echo get_template('layout/sponser');
-    echo get_template('layout/latest_event_list');
+     echo get_template('layout/latest_event_list');
 ?>
 
 									<!--<div class="clear"></div>-->
@@ -26,10 +24,27 @@
 <?php 
     echo get_template('layout/footer');
 ?>
+<div id="appfromModal" class="modal fade"  data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog  modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Weforyou.ngo And Sahara Trust Run Together,
+educational Opportunity Camp For Free Nursing Course </h4>
+            </div>
+            <div class="modal-body">
+				<?php echo get_template('viewer_home_popup.php');
+				?> 
+            </div>
+
+        </div>
+    </div>
+</div>
 <script type='text/javascript' src="<?php echo skin_url('js/jquery.nivo.slider.js');?>"></script>
 <script type='text/javascript' src="<?php echo skin_url('testimonialsrotator/js/jquery.quovolver.min.js');?>"></script>
 <script type='text/javascript' src="<?php echo skin_url('testimonialsrotator/js/bootstrap.js');?>"></script>
 <script type='text/javascript' src="<?php echo skin_url('js/home.js');?>"></script>
+
 
 <script>
 jQuery(window).bind('scroll', function() {
@@ -48,4 +63,8 @@ controlNav: true,
 pauseOnHover: false,
 });
 });    
+//jQuery.noConflict();
+    jQuery(document).ready(function(){
+        jQuery("#appfromModal").modal('show');
+    });     
 </script>

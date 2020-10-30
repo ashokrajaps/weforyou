@@ -1,13 +1,21 @@
+<style type="text/css">
+.contactcls,.addresscls{
+	margin-left: 30px;
+}
+</style>
 								<div class="header-wrapper">
 									<div class="signin_wrap">
 										<div class="container">
 											<div class="widget-left">
 												<span class="phoneadressinfo">
 													<i class="fa fa-phone fa-lg "></i>
-													<strong>+91 9551203896</strong>
+													<strong>+91 99443 98056<br><span class="contactcls">+91 90253 61213</span></strong>
 												</span>
 												<span class="phoneadressinfo">
-													<i class="fa fa-map-marker fa-lg"></i> No 50, ECR Main Road, Thiruvanmiyur, Chennai-41
+													<i class="fa fa-map-marker fa-lg"></i> Weforyou
+3/28 C Sivan Kovil Street,<br>
+<span class="addresscls">Viswambal Samuthiram (South),
+Thuraiyur(TK), Trichy - 621003</span>
 												</span>
 											</div>
 											<!--widget-left-->

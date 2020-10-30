@@ -266,13 +266,13 @@ if (! function_exists ( "get_event_date_formart" )) {
 	}
 }
 if (! function_exists ( "get_event_time_formart" )) {
-	function get_event_time_formart($date, $date1,$format = "") {
+	function get_event_time_formart($date, $date1,$format = "h:i A") {
 		$CI = & get_instance ();
 		$format = ($format != "") ? $format : 'H:i';
 		if ($date == "0000:00:00 00:00:00" || $date == "00:00:00" || $date == NULL) {
 			return "";
 		} else {
-			return date ( $format, strtotime ( $date ) ) ." ".date ( $format, strtotime ( $date1 ) );
+			return date ( $format, strtotime ( $date ) ) ." to ".date ( $format, strtotime ( $date1 ) );
 		}
 	}
 }
@@ -1108,21 +1108,6 @@ if ( ! function_exists('get_event_registration_remainder_alert'))
 		$table = 'event';
 		$order=array('event_registration_start_date'=>'asc');
 		$where_arary=array("event_status"=>'1','event_registration_end_date >='=>date("Y-m-d"));
-		$result = $CI->Mydb->get_record ( '*', $table, $where_arary,$order );
-		// echo $CI->Mydb->print_query();
-		// exit;
-			return $result;
-	}
-}
-if ( ! function_exists('get_event_notify'))
-{
-	function get_event_notify()
-	{ 
-		$CI = & get_instance ();
-		$result=array();
-		$table = 'event';
-		$order=array('event_created_on'=>'desc');
-		$where_arary=array("event_status"=>'1');
 		$result = $CI->Mydb->get_record ( '*', $table, $where_arary,$order );
 		// echo $CI->Mydb->print_query();
 		// exit;

@@ -23,6 +23,7 @@
                 <li><a href="<?php echo admin_url()."eventuser"?>"> <?php echo get_label('event_user_manage_label');?></a></li> 
                 <li><a href="<?php echo admin_url()."eventdonation"?>"> <?php echo get_label('event_donation_manage_label');?></a></li> 
                 <li><a href="<?php echo admin_url()."enquiry"?>"> <?php echo get_label('enquiry_manage_label');?></a></li> 
+                <li><a href="<?php echo admin_url()."educationreg"?>"> <?php echo get_label('educationreg_manage_label');?></a></li> 
 				
                 </ul>
                 <ul class="nav navbar-nav navbar-right">

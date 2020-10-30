@@ -89,3 +89,17 @@ $lang['event_labels'] = "Events";
 $lang['donar_college_name'] = "College Name";
 $lang['donar_event_team_name'] = "Team Name";
 $lang['donar_alternative_contact_no'] = "Alternative Contact No";
+
+$lang['educationreg_manage_label'] = "Education Registration";
+$lang['educationreg_manage_labels'] = "Education Registrations";
+$lang['er_name'] = "Name";
+$lang['er_mobileno'] = "Mobile No";
+$lang['er_year_of_passing'] = "Year Of Passing";
+$lang['er_ten_total_mark'] = "10th Total Mark";
+$lang['er_twelve_total_mark'] = "12th Total Mark";
+$lang['er_family_yearly_income'] = "Family Annual Income";
+$lang['er_address'] = "Address";
+$lang['er_pincode'] = "Pincode";
+$lang['er_status'] = "Status";
+$lang['er_created_on'] = "Created On";
+

@@ -36,11 +36,11 @@ document.write('<script type="text/javascript" src="'+lod_lib+'bootstrap-datetim
 	if(donation_val =="yes")
 	{
 		$('.event_is_registration_div').show();
-		$('.is_registration_input').attr('required');	
+		$('.event_is_registration_div').find('.is_registration_input').attr('required');	
 	}
 	else
 	{
-		$('.is_registration_input').removeClass('required');	
+		$('.event_is_registration_div').find('.is_registration_input').removeClass('required');	
 		$('.event_is_registration_div').hide();	
 	}
 }

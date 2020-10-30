@@ -155,6 +155,52 @@ class Viewer extends MX_Controller
 	
 		$this->load->view($this->folder.$this->module.'_services', $data);
     }
+	function educationreg()
+    {
+		/* form submit */
+		if ($this->input->post ( 'action' ) == "Add") {
+			check_ajax_request (); 
+			
+			$this->form_validation->set_rules ( 'er_name', 'lang:er_name', 'trim|required')
+			->set_rules ('er_mobileno', 'lang:er_mobileno', 'trim|required')
+			->set_rules ('er_year_of_passing', 'lang:er_year_of_passing', 'trim|required')
+			->set_rules ('er_ten_total_mark', 'lang:er_ten_total_mark', 'trim|required')
+			->set_rules ('er_twelve_total_mark', 'lang:er_twelve_total_mark', 'trim')
+			->set_rules ('er_family_yearly_income', 'lang:er_family_yearly_income', 'trim')
+			->set_rules ('er_address', 'lang:er_address', 'trim|required')
+			->set_rules ('er_pincode', 'lang:er_pincode', 'trim|required');
+			
+			if ($this->form_validation->run () == TRUE) {
+
+				$insert_array = array (
+						'er_name' => post_value ('er_name'),
+						'er_mobileno' => post_value ('er_mobileno' ),
+						'er_year_of_passing'=>post_value ('er_year_of_passing'),
+						'er_ten_total_mark'=>post_value ('er_ten_total_mark'),
+						'er_twelve_total_mark'=>post_value ('er_twelve_total_mark'),
+						'er_family_yearly_income'=>post_value ('er_family_yearly_income'),
+						'er_address'=>post_value ('er_address'),
+						'er_pincode'=>post_value ('er_pincode'),
+						'er_created_on' => current_date (),
+						'er_created_ip' => get_ip (),
+ 				);
+				//print_r($insert_array);
+				$insert_id = $this->Mydb->insert ( 'tbl_education_reg', $insert_array );
+				$result ['status'] = 'success';
+				$result ['message'] = sprintf ( $this->lang->line ( 'success_message_add' ), 'Registration' );
+			} else {
+				$result ['status'] = 'error';
+				$result ['message'] = validation_errors ();
+			}
+			
+			echo json_encode ( $result );
+			exit ();
+		}    	
+		$data = $this->load_module_info();
+		$data['title'] = $data['form_heading'] = "We for Education 2020";
+	
+		$this->load->view($this->folder.$this->module.'_education_reg', $data);
+    }    
 
 	/* this method used to common module labels */
 	function load_module_info() 
